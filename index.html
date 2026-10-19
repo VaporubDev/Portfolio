@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio temático ASCII com design minimalista, terminal interativo e código limpo.">
+  <title>ÉRICA PAIXÃO // [FULLSTACK &amp; UI/UX]</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body class="ascii-body">
+
+  <div class="crt-overlay"></div>
+
+  <canvas id="ascii-bg-canvas" class="ascii-bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- BARRA DE NAVEGAÇÃO -->
+  <header class="ascii-navbar" id="navbar">
+    <div class="container nav-content">
+      <a href="#hero" class="brand-link" title="Portfólio ASCII">
+        <div class="ascii-brand-icon">
+          <pre class="ascii-char-logo"> <span class="c-purple">o</span>  
+<span class="c-purple">/\</span><span class="c-grey">_/</span>
+<span class="c-grey">I</span><span class="c-purple">7</span><span class="c-grey">|</span> </pre>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">ÉRICA PAIXÃO</span>
+          <span class="brand-sub">FULLSTACK &amp; UI/UX</span>
+        </div>
+      </a>
+
+      <nav class="ascii-nav-menu">
+        <a href="#sobre" class="ascii-nav-item"><span data-i18n="nav_about">[01] Sobre</span></a>
+        <a href="#habilidades" class="ascii-nav-item"><span data-i18n="nav_skills">[02] Skills</span></a>
+        <a href="#projetos" class="ascii-nav-item"><span data-i18n="nav_projects">[03] Projetos</span></a>
+        <a href="#terminal" class="ascii-nav-item"><span data-i18n="nav_terminal">[04] Terminal</span></a>
+        <a href="#contato" class="ascii-nav-item"><span data-i18n="nav_contact">[05] Contato</span></a>
+      </nav>
+
+      <div class="ascii-nav-actions">
+        <div class="ascii-lang-select-wrap">
+          <button class="ascii-btn ascii-lang-btn" id="lang-btn" title="Selecionar Idioma / Language">
+            <span id="current-lang-text">[ PT ]</span>
+          </button>
+          <div class="ascii-lang-dropdown" id="lang-dropdown">
+            <div class="lang-top-bar" data-i18n="lang_menu_title">+--[ IDIOMAS ]--+</div>
+            <button class="lang-opt active" data-lang="pt">&gt; PT (Português)</button>
+            <button class="lang-opt" data-lang="en">&gt; EN (English)</button>
+            <button class="lang-opt" data-lang="es">&gt; ES (Español)</button>
+            <button class="lang-opt" data-lang="fr">&gt; FR (Français)</button>
+            <div class="lang-bot-bar">+---------------+</div>
+          </div>
+        </div>
+
+        <button class="ascii-btn ascii-theme-btn" id="theme-toggle" title="Modo Claro e Escuro">
+          <span class="theme-text" id="theme-text">[ ☾ ESCURO ]</span>
+        </button>
+
+        <a href="#contato" class="ascii-btn ascii-btn-highlight" data-i18n="nav_contact_btn">[ FALE COMIGO ]</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEÇÃO HERO -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <div class="ascii-badge">
+          <span class="blink-cursor">&gt;&gt;&gt;</span> <span data-i18n="hero_status">[ STATUS: DISPONÍVEL]</span>
+        </div>
+
+        <pre class="ascii-banner-title">
+  _____      _                     _            
+ | ____|_ __(_) ___ __ _        __| | _____   __
+ |  _| | '__| |/ __/ _` |      / _` |/ _ \ \ / /
+ | |___| |  | | (_| (_| |  _  | (_| |  __/\ V / 
+ |_____|_|  |_|\___\__,_| (_)  \__,_|\___| \_/  
+        </pre>
+
+        <p class="hero-desc" data-i18n="hero_desc">
+          &gt; Desenvolvedora Fullstack &amp; UI Designer. Uno arquitetura de software, bases de dados sólidas e design de interface para construir aplicações completas, eficientes e intuitivas.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projetos" class="ascii-btn ascii-btn-primary" data-i18n="hero_btn_projects">
+            [► VER PROJETOS]
+          </a>
+          <a href="#terminal" class="ascii-btn ascii-btn-secondary" data-i18n="hero_btn_terminal">
+            [⚙ ABRIR TERMINAL]
+          </a>
+          <a href="#contato" class="ascii-btn ascii-btn-secondary" data-i18n="hero_btn_contact">
+            [✉ ENVIAR MENSAGEM]
+          </a>
+        </div>
+
+        <div class="ascii-stats-table">
+          <div class="stat-col">
+            <span class="stat-val" data-i18n="stat_exp_val">+1 ANO</span>
+            <span class="stat-desc" data-i18n="stat_exp_desc">/* Experiência */</span>
+          </div>
+          <div class="stat-sep">|</div>
+          <div class="stat-col">
+            <span class="stat-val" data-i18n="stat_proj_val">+5 PROJ</span>
+            <span class="stat-desc" data-i18n="stat_proj_desc">/* Prontos */</span>
+          </div>
+          <div class="stat-sep">|</div>
+          <div class="stat-col">
+            <span class="stat-val" data-i18n="stat_craft_val">FULLSTACK</span>
+            <span class="stat-desc" data-i18n="stat_craft_desc">/* APIs &amp; Interface */</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="terminal-card">
+          <div class="terminal-bar">
+            <span class="t-btn t-close"></span>
+            <span class="t-btn t-min"></span>
+            <span class="t-btn t-max"></span>
+            <span class="t-title">developer_workstation.sh</span>
+          </div>
+
+          <div class="terminal-body">
+            <div class="hero-ascii-station">
+              <pre class="ascii-hero-avatar"> <span class="c-purple">o</span>  
+<span class="c-purple">/\</span><span class="c-grey">_/</span>
+<span class="c-grey">I</span><span class="c-purple">7</span><span class="c-grey">|</span> </pre>
+            </div>
+
+            <div class="ascii-cli-text">
+              <p><span class="cli-prompt">erica@portfolio:~$</span> cat info.json</p>
+              <pre class="json-code">
+{
+  <span class="key" data-i18n="hero_json_name">"nome"</span>: <span class="val">"Érica Paixão"</span>,
+  <span class="key">"frontend"</span>: [<span class="val">"Figma"</span>, <span class="val">"HTML/CSS"</span>, <span class="val">"JavaScript"</span>],
+  <span class="key">"backend"</span>: [<span class="val">"Python/Node"</span>, <span class="val">"SQL"</span>, <span class="val">"APIs REST"</span>]
+}
+              </pre>
+              <p class="live-prompt"><span class="cli-prompt">erica@portfolio:~$</span> <span class="typed-text">cat developer_manifest.json</span><span class="cursor">_</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ascii-divider">
+    <span>+--------------------------------------------------------------------------------+</span>
+  </div>
+
+  <!-- SEÇÃO 01: SOBRE MIM -->
+  <section class="section" id="sobre">
+    <div class="container">
+      <div class="section-title-box">
+        <span class="box-tag" data-i18n="about_tag">// 01_ABOUT_ME</span>
+        <h2 class="box-heading" data-i18n="about_heading">FILOSOFIA &amp; ABORDAGEM</h2>
+        <span class="box-sub" data-i18n="about_sub">Construção de aplicações completas: do modelo de dados ao detalhe visual da interface.</span>
+      </div>
+
+      <div class="ascii-section-divider">
+        <span>+--------------------------------------------------------------------------------+</span>
+      </div>
+
+      <div class="ascii-cards-grid">
+        <div class="ascii-box">
+          <div class="box-top-bar" data-i18n="about_card1_title">+--[ UI/UX &amp; PROTÓTIPO ]--------------+</div>
+          <div class="box-inner">
+            <pre class="box-mini-ascii" data-i18n="about_card1_ascii">
+.---.  [ DESIGN SYSTEMS &amp; FIGMA ]
+|[_]|  Componentização rigorosa,
+|:::|  fluxos intuitivos e alta
+'---'  fidelidade prontos para dev.
+            </pre>
+            <p data-i18n="about_card1_text">Concepção visual centrada no usuário, estruturada em Auto Layout, variáveis e bibliotecas de componentes escaláveis no Figma.</p>
+          </div>
+          <div class="box-bottom-bar">+-------------------------------------+</div>
+        </div>
+
+        <div class="ascii-box">
+          <div class="box-top-bar" data-i18n="about_card2_title">+--[ BACKEND &amp; DADOS ]----------------+</div>
+          <div class="box-inner">
+            <pre class="box-mini-ascii" data-i18n="about_card2_ascii">
++-+    [ ARQUITETURA &amp; APIS ]
+| |+-+ Lógica de negócio robusta,
++-+| | APIs REST e modelagem de
+  +-+'  bases de dados relacionais.
+            </pre>
+            <p data-i18n="about_card2_text">Modelagem e gestão de dados relacionais com consultas eficientes, garantindo integridade transacional, segurança e escalabilidade nas regras de negócio.</p>
+          </div>
+          <div class="box-bottom-bar">+-------------------------------------+</div>
+        </div>
+
+        <div class="ascii-box">
+          <div class="box-top-bar" data-i18n="about_card3_title">+--[ FRONTEND &amp; INTEGRAÇÃO ]----------+</div>
+          <div class="box-inner">
+            <pre class="box-mini-ascii" data-i18n="about_card3_ascii">
+| | |  [ INTERFACES EFICIENTES ]
+[===]  Integração fluida com APIs,
+ \=/   código semântico, limpo e
+  !    foco em alta performance.
+            </pre>
+            <p data-i18n="about_card3_text">Implementação moderna orientada a componentes, comunicação assíncrona com o backend e interfaces responsivas sem excesso de dependências.</p>
+          </div>
+          <div class="box-bottom-bar">+-------------------------------------+</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ascii-divider">
+    <span>+--------------------------------------------------------------------------------+</span>
+  </div>
+  <!-- SEÇÃO 02: HABILIDADES -->
+  <section class="section" id="habilidades">
+    <div class="container">
+      <div class="section-title-box">
+        <span class="box-tag" data-i18n="skills_tag">// 02_SKILLS_AND_STACK</span>
+        <h2 class="box-heading" data-i18n="skills_heading">HABILIDADES TÉCNICAS</h2>
+        <span class="box-sub" data-i18n="skills_sub">Competências e ferramentas aplicadas na concepção de sistemas completos, do design à base de dados.</span>
+      </div>
+
+      <div class="ascii-section-divider">
+        <span>+--------------------------------------------------------------------------------+</span>
+      </div>
+
+      <!-- Barras de Proficiência Técnica -->
+      <div class="skills-grid">
+
+        <div class="skill-meter-box">
+          <div class="skill-meter-header">
+            <span class="skill-label" data-i18n="skill_label_1">&gt; FRONTEND / JS, REACT, VUE, JQUERY, HTML5/CSS3/SVG</span>
+            <span class="skill-pct">[ CORE ]</span>
+          </div>
+          <pre class="ascii-bar" data-i18n="skill_bar_1">[██████████████████░░] [ PROFICIENTE ]</pre>
+        </div>
+
+        <div class="skill-meter-box">
+          <div class="skill-meter-header">
+            <span class="skill-label" data-i18n="skill_label_2">&gt; BACKEND / JAVA, PYTHON, C#, NODE.JS, SPRING, DJANGO</span>
+            <span class="skill-pct">[ CORE ]</span>
+          </div>
+          <pre class="ascii-bar" data-i18n="skill_bar_2">[████████████████░░░░] [ PROFICIENTE ]</pre>
+        </div>
+
+        <div class="skill-meter-box">
+          <div class="skill-meter-header">
+            <span class="skill-label" data-i18n="skill_label_3">&gt; BASES DE DADOS / POSTGRESQL, MYSQL &amp; SQL</span>
+            <span class="skill-pct">[ DATA ]</span>
+          </div>
+          <pre class="ascii-bar" data-i18n="skill_bar_3">[███████████████░░░░░] [ INTERMEDIÁRIO ]</pre>
+        </div>
+
+        <div class="skill-meter-box">
+          <div class="skill-meter-header">
+            <span class="skill-label" data-i18n="skill_label_4">&gt; DEVOPS &amp; INFRA / DOCKER, LINUX, BASH, GIT &amp; GITHUB</span>
+            <span class="skill-pct">[ DEVOPS ]</span>
+          </div>
+          <pre class="ascii-bar" data-i18n="skill_bar_4">[██████████████░░░░░░] [ PRÁTICO ]</pre>
+        </div>
+
+        <div class="skill-meter-box">
+          <div class="skill-meter-header">
+            <span class="skill-label" data-i18n="skill_label_5">&gt; APIS &amp; INTEGRAÇÃO / RESTFUL &amp; ARQUITETURA</span>
+            <span class="skill-pct">[ SERVICES ]</span>
+          </div>
+          <pre class="ascii-bar" data-i18n="skill_bar_5">[████████████████░░░░] [ PROFICIENTE ]</pre>
+        </div>
+
+        <div class="skill-meter-box">
+          <div class="skill-meter-header">
+            <span class="skill-label" data-i18n="skill_label_6">&gt; UI/UX DESIGN / FIGMA, DESIGN SYSTEMS &amp; SVG</span>
+            <span class="skill-pct">[ UI/UX ]</span>
+          </div>
+          <pre class="ascii-bar" data-i18n="skill_bar_6">[███████████████████░] [ AVANÇADO ]</pre>
+        </div>
+      </div>
+
+      <!-- Badges / Chips de Tecnologias -->
+      <div class="ascii-chips-list">
+        <span class="ascii-chip">[ #JAVA ]</span>
+        <span class="ascii-chip">[ #PYTHON ]</span>
+        <span class="ascii-chip">[ #CSHARP ]</span>
+        <span class="ascii-chip">[ #JAVASCRIPT ]</span>
+        <span class="ascii-chip">[ #HTML5 ]</span>
+        <span class="ascii-chip">[ #CSS3 ]</span>
+        <span class="ascii-chip">[ #BASH ]</span>
+        <span class="ascii-chip">[ #SPRING_BOOT ]</span>
+        <span class="ascii-chip">[ #NODEJS ]</span>
+        <span class="ascii-chip">[ #DJANGO ]</span>
+        <span class="ascii-chip">[ #REACT ]</span>
+        <span class="ascii-chip">[ #VUE ]</span>
+        <span class="ascii-chip">[ #JQUERY ]</span>
+        <span class="ascii-chip">[ #POSTGRESQL ]</span>
+        <span class="ascii-chip">[ #MYSQL ]</span>
+        <span class="ascii-chip">[ #LINUX ]</span>
+        <span class="ascii-chip">[ #GIT ]</span>
+        <span class="ascii-chip">[ #GITHUB ]</span>
+        <span class="ascii-chip">[ #DOCKER ]</span>
+        <span class="ascii-chip">[ #SVG ]</span>
+        <span class="ascii-chip">[ #FIGMA ]</span>
+        <span class="ascii-chip">[ #REST_API ]</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="ascii-divider">
+    <span>+--------------------------------------------------------------------------------+</span>
+  </div>
+
+  <!-- SEÇÃO 03: PROJETOS EM DESTAQUE -->
+  <section class="section" id="projetos">
+    <div class="container">
+      <div class="section-title-box">
+        <span class="box-tag" data-i18n="projects_tag">// 03_FEATURED_PROJECTS</span>
+        <h2 class="box-heading" data-i18n="projects_heading">PROJETOS EM DESTAQUE</h2>
+        <span class="box-sub" data-i18n="projects_sub">Trabalhos estruturados com código semântico e prototipagem no Figma.</span>
+      </div>
+
+      <div class="ascii-section-divider">
+        <span>+--------------------------------------------------------------------------------+</span>
+      </div>
+
+      <!-- Filtros por Categoria -->
+      <div class="project-filters">
+        <button class="ascii-filter-btn active" data-filter="all" data-i18n="filter_all">[ ALL_PROJECTS ]</button>
+        <button class="ascii-filter-btn" data-filter="web" data-i18n="filter_web">[ WEB_APPS ]</button>
+        <button class="ascii-filter-btn" data-filter="ui" data-i18n="filter_ui">[ UI_FIGMA ]</button>
+        <button class="ascii-filter-btn" data-filter="scripts" data-i18n="filter_scripts">[ SCRIPTS &amp; AUTOMAÇÃO ]</button>
+      </div>
+
+      <!-- Grid de Projetos -->
+      <div class="projects-ascii-grid">
+        <div class="project-ascii-card" style="opacity: 0.85;">
+          <div class="card-bar-top">+--[ GITHUB_SYNC ]--------------------+</div>
+          <div class="card-ascii-content">
+            <div class="project-ascii-preview">
+<pre>
+┌──────────────────────────────────────┐
+│ [GITHUB API] SYNCING...              │
+├──────────────────────────────────────┤
+│   o   STATUS: [CONNECTING]           │
+│  /\_/ SYNC: BUSCANDO REPOS...        │
+│  I7|  AGUARDE UM INSTANTE...         │
+└──────────────────────────────────────┘
+</pre>
+            </div>
+            <h3 class="proj-name" data-i18n="proj_loading_title">&gt; Sincronizando com GitHub...</h3>
+            <p class="proj-desc" data-i18n="proj_loading_desc">Buscando os repositórios públicos mais recentes diretamente do perfil...</p>
+            <div class="proj-tags">
+              <span class="ptag">[FETCHING]</span>
+              <span class="ptag">[GITHUB_API]</span>
+            </div>
+            <div class="proj-actions">
+              <span class="ascii-btn ascii-btn-sm" style="opacity: 0.5; pointer-events: none;">[ AGUARDE ]</span>
+            </div>
+          </div>
+          <div class="card-bar-bottom">+-------------------------------------+</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ascii-divider">
+    <span>+--------------------------------------------------------------------------------+</span>
+  </div>
+
+  <!-- SEÇÃO 04: TERMINAL CLI INTERATIVO -->
+  <section class="section" id="terminal">
+    <div class="container">
+      <div class="section-title-box">
+        <span class="box-tag" data-i18n="term_tag">// 04_INTERACTIVE_CONSOLE</span>
+        <h2 class="box-heading" data-i18n="term_heading">TERMINAL CLI INTERATIVO</h2>
+        <span class="box-sub" data-i18n="term_sub">Experimente digitar comandos: 'help', 'about', 'skills', 'projects', 'contact', 'clear'.</span>
+      </div>
+
+      <div class="interactive-terminal-box">
+        <div class="terminal-bar">
+          <span class="t-btn t-close"></span>
+          <span class="t-btn t-min"></span>
+          <span class="t-btn t-max"></span>
+          <span class="t-title">bash -- erica@portfolio:~ (tty1)</span>
+        </div>
+        <div class="terminal-screen" id="terminal-screen">
+          <p class="term-welcome" id="term-welcome" data-i18n="term_welcome">
+Bem-vindo(a) ao Terminal Interativo ASCII!
+Digite 'help' para visualizar os comandos disponíveis.
+          </p>
+          <div id="terminal-history"></div>
+          <div class="terminal-input-row">
+            <span class="cli-prompt">visitor@ascii-portfolio:~$</span>
+            <input type="text" id="terminal-input" class="term-input" autocomplete="off" spellcheck="false">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ascii-divider">
+    <span>+--------------------------------------------------------------------------------+</span>
+  </div>
+
+  <!-- SEÇÃO 05: CONTATO & TRANSMISSÃO DE MENSAGEM -->
+  <section class="section" id="contato">
+    <div class="container">
+      <div class="section-title-box">
+        <span class="box-tag" data-i18n="contact_tag">// 05_SEND_MESSAGE</span>
+        <h2 class="box-heading" data-i18n="contact_heading">VAMOS CONVERSAR?</h2>
+        <span class="box-sub" data-i18n="contact_sub">Disponível para freelas, novos projetos e oportunidades profissionais.</span>
+      </div>
+
+      <div class="contact-form-wrapper">
+        <div class="contact-form-box">
+          <div class="box-top-bar" data-i18n="contact_form_title">+--[ ENVIAR TRANSMISSÃO ]--------------------------------------------------------+</div>
+          <form class="ascii-form" id="contact-form">
+            <div class="form-line">
+              <label for="name" data-i18n="contact_lbl_name">&gt; NOME:</label>
+              <input type="text" id="name" data-i18n-placeholder="contact_ph_name" placeholder="Seu nome ou empresa" required>
+            </div>
+            <div class="form-line">
+              <label for="email" data-i18n="contact_lbl_email">&gt; EMAIL:</label>
+              <input type="email" id="email" data-i18n-placeholder="contact_ph_email" placeholder="seu-email@dominio.com" required>
+            </div>
+            <div class="form-line">
+              <label for="message" data-i18n="contact_lbl_msg">&gt; MENSAGEM:</label>
+              <textarea id="message" rows="3" data-i18n-placeholder="contact_ph_msg" placeholder="Descreva sua ideia ou projeto..." required></textarea>
+            </div>
+            <button type="submit" class="ascii-btn ascii-btn-highlight btn-send" id="btn-submit" data-i18n="contact_btn_send">
+              [ TRANSMITIR MENSAGEM &gt;&gt; ]
+            </button>
+          </form>
+          <div class="box-bottom-bar">+----------------------------------------------------------------------------------------------------+</div>
+        </div>
+
+        <div class="contact-links-bar">
+          <a href="https://github.com/VaporubDev" target="_blank" rel="noopener noreferrer" class="ascii-chip">[ GITHUB ]</a>
+          <a href="https://www.linkedin.com/in/erica-paixao-gois/" target="_blank" rel="noopener noreferrer" class="ascii-chip">[ LINKEDIN ]</a>
+          <a href="https://www.instagram.com/ericaa_dev" target="_blank" rel="noopener noreferrer" class="ascii-chip">[ INSTAGRAM ]</a>
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=florserena.epg203@gmail.com" target="_blank" rel="noopener noreferrer" class="ascii-chip">[ EMAIL ]</a>        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ascii-divider">
+    <span>+--------------------------------------------------------------------------------+</span>
+  </div>
+  <!-- RODAPÉ -->
+  <footer class="ascii-footer">
+    <div class="container footer-ascii-container">
+      <div class="footer-icon-wrap">
+        <pre class="ascii-char-footer"> <span class="c-purple">o</span>  
+<span class="c-purple">/\</span><span class="c-grey">_/</span>
+<span class="c-grey">I</span><span class="c-purple">7</span><span class="c-grey">|</span> </pre>
+      </div>
+      <div class="footer-text">
+        <p data-i18n="footer_text1">[ ASCII_PORTFOLIO ] // DESENVOLVIDO COM JUNÇÃO DE CARACTERES PURA</p>
+        <p data-i18n="footer_text2">© 2026 Érica Paixão. Design minimalista &amp; Clean Code.</p>
+      </div>
+      <a href="#hero" class="ascii-btn ascii-btn-sm" data-i18n="footer_btn_top">[ ^ RETORNAR AO TOPO ]</a>
+    </div>
+  </footer>
+
+  <!-- Preview Flutuante dos Projetos -->
+  <div class="project-preview-popover" id="project-preview-popover" aria-hidden="true">
+    <div class="popover-bar-top">
+      <span class="popover-title" id="popover-title">+--[ PREVIEW: REPO ]</span>
+      <span class="popover-badge">[ REAL_UI ]</span>
+    </div>
+    <div class="popover-media-container">
+      <div class="popover-spinner" id="popover-spinner">[ CARREGANDO INTERFACE... ]</div>
+      <img id="popover-img" class="popover-img" src="" alt="Screenshot Real do Projeto" />
+      <div id="popover-cli" class="popover-cli" style="display: none;"></div>
+    </div>
+    <div class="popover-bar-bottom">
+      <span id="popover-caption" class="popover-caption">&gt; screenshot diretamente do projeto</span>
+      <span class="popover-tag">[ ASSET REAL ]</span>
+    </div>
+  </div>
+
+  <div class="ascii-toast" id="toast">
+    <pre id="toast-text">
++------------------------------------------+
+| [✓] TRANSMISSÃO ENVIADA COM SUCESSO!     |
++------------------------------------------+
+    </pre>
+  </div>
+
+  <script src="ascii-bg.js"></script>
+  <script src="translate.js"></script>
+  <script src="projects.js"></script>
+  <script src="terminal.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
