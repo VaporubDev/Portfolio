@@ -375,6 +375,116 @@ body.ascii-body {
   white-space: nowrap;
 }
 
+.ascii-menu-toggle {
+  display: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--ascii-border);
+  color: var(--text-bright);
+}
+
+.ascii-menu-toggle:hover {
+  border-color: var(--ascii-purple);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Menu Mobile Retrô ASCII
+   ========================================================================== */
+.ascii-mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: rgba(12, 13, 18, 0.98);
+  border-bottom: 2px solid var(--ascii-purple);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 14px 20px 20px 20px;
+  z-index: 1001;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8), 0 0 20px var(--ascii-purple-glow);
+}
+
+[data-theme="light"] .ascii-mobile-menu {
+  background: rgba(248, 246, 252, 0.98);
+  border-color: var(--ascii-purple);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+}
+
+.ascii-mobile-menu.open {
+  display: flex;
+  flex-direction: column;
+  animation: mobileMenuIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes mobileMenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.mobile-menu-bar-top,
+.mobile-menu-bar-bottom {
+  color: var(--ascii-border);
+  font-size: 0.72rem;
+  overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+  padding: 4px 0;
+  font-family: var(--font-mono);
+}
+
+.ascii-mobile-item {
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 14px;
+  background: var(--bg-panel);
+  border: 1px solid var(--ascii-border);
+  transition: var(--transition);
+  display: block;
+}
+
+.ascii-mobile-item:hover,
+.ascii-mobile-item.active {
+  border-color: var(--ascii-purple);
+  color: #ffffff;
+  background: var(--ascii-purple);
+  box-shadow: 0 0 12px var(--ascii-purple-glow);
+}
+
+.mobile-cta-btn {
+  width: 100%;
+  margin-top: 4px;
+  padding: 10px 14px;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.88rem;
+}
+
+[data-theme="light"] .mobile-menu-bar-top,
+[data-theme="light"] .mobile-menu-bar-bottom {
+  color: #64748b;
+}
+
 /* ==========================================================================
    Language Selector Dropdown
    ========================================================================== */
@@ -1396,11 +1506,54 @@ body.ascii-body {
 }
 
 /* ==========================================================================
-   Responsive Breakpoints
+   Responsive Breakpoints & Mobile Optimization
    ========================================================================== */
+
+/* Salvaguardas globais contra transbordamento horizontal */
+.ascii-divider,
+.ascii-section-divider {
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+}
+
+.ascii-divider span,
+.ascii-section-divider span {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+}
+
+.box-top-bar,
+.box-bottom-bar,
+.card-bar-top,
+.card-bar-bottom {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 @media (max-width: 992px) {
   .hero-grid {
     grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-desc {
+    text-align: center;
+    max-width: 620px;
+  }
+  .hero-buttons {
+    justify-content: center;
   }
   .ascii-cards-grid,
   .projects-ascii-grid {
@@ -1411,19 +1564,368 @@ body.ascii-body {
   }
 }
 
-@media (max-width: 768px) {
+/* Ativa o menu retrô e oculta os links em qualquer tela <= 1080px (iPad Air, tablets e celulares) */
+@media (max-width: 1080px) {
   .ascii-nav-menu {
-    display: none;
+    display: none !important;
   }
+  .ascii-menu-toggle {
+    display: inline-flex !important;
+  }
+  .ascii-navbar .container {
+    padding: 0 18px;
+  }
+  .nav-content {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Seção Hero e Títulos */
+  .hero-section {
+    padding-top: 104px;
+    padding-bottom: 50px;
+  }
+  .ascii-banner-title {
+    font-size: clamp(0.5rem, 2.3vw, 0.72rem);
+    line-height: 1.15;
+    max-width: 100%;
+  }
+
+  /* Grids de 1 Coluna */
   .ascii-cards-grid,
   .projects-ascii-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
-  .ascii-banner-title {
-    font-size: 0.65rem;
+
+  /* Filtros de Projetos */
+  .project-filters {
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 24px;
+    width: 100%;
+  }
+  .ascii-filter-btn {
+    flex: 1 1 calc(50% - 8px);
+    text-align: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    padding: 8px 10px;
+    white-space: nowrap;
+  }
+
+  /* Seções gerais */
+  .section {
+    padding: 48px 0;
+  }
+  .section-title-box {
+    margin-bottom: 28px;
+  }
+  .box-heading {
+    font-size: clamp(1.4rem, 5.5vw, 1.85rem);
+  }
+  .box-sub {
+    font-size: 0.86rem;
+    padding: 0 8px;
+  }
+
+  /* Rodapé */
+  .ascii-footer {
+    padding: 32px 0;
   }
   .footer-ascii-container {
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+  .footer-text {
+    font-size: 0.76rem;
+    line-height: 1.5;
+  }
+  .footer-ascii-container .ascii-btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  /* Desativa popover flutuante no mobile para evitar sobreposições ao tocar */
+  .project-preview-popover {
+    display: none !important;
   }
 }
+
+@media (max-width: 600px) {
+  /* Navbar Compacta para Celulares (iPhone 14 Pro, Android, etc.) */
+  .ascii-navbar {
+    height: 62px;
+  }
+  .ascii-navbar .container {
+    padding: 0 10px;
+  }
+  .nav-content {
+    gap: 6px;
+  }
+  .brand-link {
+    gap: 6px;
+  }
+  .ascii-brand-icon {
+    padding: 2px 5px;
+  }
+  .ascii-char-logo {
+    font-size: 11px;
+    line-height: 1;
+  }
+  .brand-title {
+    font-size: 0.85rem;
+    letter-spacing: 0.2px;
+  }
+  .brand-sub {
+    display: none !important;
+  }
+  .nav-cta-desktop {
+    display: none !important;
+  }
+  .theme-word {
+    display: none !important;
+  }
+  .ascii-nav-actions {
+    gap: 4px;
+  }
+  .ascii-btn {
+    padding: 5px 7px;
+    font-size: 0.74rem;
+  }
+  .ascii-lang-btn {
+    padding: 5px 7px;
+  }
+  .ascii-theme-btn {
+    padding: 5px 7px;
+  }
+  .ascii-menu-toggle {
+    padding: 5px 8px;
+  }
+
+  /* Dropdown de idiomas */
+  .ascii-lang-dropdown {
+    right: 0;
+    min-width: 150px;
+  }
+
+  /* Habilidades Técnicas */
+  .skill-meter-box {
+    padding: 14px 14px;
+  }
+  .skill-meter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .skill-label {
+    font-size: 0.74rem;
+    line-height: 1.35;
+    flex: 1;
+    min-width: 0;
+    word-break: break-word;
+  }
+  .skill-pct {
+    font-size: 0.74rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .ascii-bar {
+    font-size: clamp(0.55rem, 2.7vw, 0.82rem);
+    white-space: pre;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .ascii-bar::-webkit-scrollbar {
+    display: none;
+  }
+  .ascii-chips-list {
+    gap: 6px;
+  }
+  .ascii-chip {
+    padding: 4px 10px;
+    font-size: 0.76rem;
+  }
+
+  /* Terminal Interativo */
+  .terminal-screen {
+    padding: 14px 12px;
+    font-size: 0.82rem;
+    min-height: 220px;
+    max-height: 360px;
+  }
+  .term-welcome {
+    font-size: 0.78rem;
+    margin-bottom: 12px;
+  }
+  .terminal-input-row {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .cli-prompt {
+    font-size: 0.78rem;
+  }
+  .term-input {
+    width: 100%;
+    font-size: 0.84rem;
+  }
+  .term-output {
+    font-size: 0.78rem;
+  }
+
+  /* Formulário de Contato */
+  .contact-form-box .ascii-form {
+    padding: 18px 12px;
+    gap: 10px;
+  }
+  .form-line input,
+  .form-line textarea {
+    font-size: 0.82rem;
+  }
+  .btn-send {
+    height: 42px;
+    font-size: 0.82rem;
+  }
+  .contact-links-bar {
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .contact-links-bar .ascii-chip {
+    flex: 1 1 calc(50% - 8px);
+    justify-content: center;
+    text-align: center;
+    font-size: 0.74rem;
+    padding: 6px 8px;
+  }
+
+  /* Toast Notification */
+  .ascii-toast {
+    left: 12px;
+    right: 12px;
+    bottom: 14px;
+  }
+  .ascii-toast pre {
+    font-size: 0.72rem;
+    padding: 8px 10px;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+}
+
+@media (max-width: 520px) {
+  /* Ajustes para telas compactas de smartphone */
+  .container {
+    padding: 0 12px;
+  }
+
+  /* Hero */
+  .hero-section {
+    padding-top: 86px;
+    padding-bottom: 40px;
+  }
+  .ascii-banner-title {
+    font-size: clamp(0.46rem, 2.2vw, 0.68rem);
+    margin-bottom: 16px;
+  }
+  .hero-desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 22px;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .hero-buttons .ascii-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 9px 12px;
+    font-size: 0.82rem;
+  }
+  .ascii-stats-table {
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px 12px;
+    gap: 4px;
+  }
+  .stat-val {
+    font-size: 0.95rem;
+  }
+  .stat-desc {
+    font-size: 0.62rem;
+  }
+
+  /* Workstation Terminal Hero */
+  .terminal-body {
+    padding: 14px 10px;
+  }
+  .hero-ascii-station {
+    padding: 12px 0;
+  }
+  .ascii-hero-avatar {
+    font-size: 28px;
+  }
+  .ascii-cli-text {
+    font-size: 0.78rem;
+    overflow-x: auto;
+  }
+  .json-code {
+    font-size: 0.74rem;
+    overflow-x: auto;
+  }
+
+  /* Cards e Projetos */
+  .box-inner {
+    padding: 16px 12px;
+  }
+  .box-mini-ascii {
+    font-size: clamp(0.66rem, 2.2vw, 0.76rem);
+  }
+  .card-ascii-content {
+    padding: 16px 10px;
+  }
+  .project-ascii-preview pre {
+    font-size: clamp(0.48rem, 2.2vw, 0.66rem);
+  }
+  .proj-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 6px;
+  }
+  .proj-actions .ascii-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  /* Telas ultra compactas (< 380px) */
+  .brand-title {
+    font-size: 0.78rem;
+  }
+  .ascii-btn {
+    padding: 4px 5px;
+    font-size: 0.68rem;
+  }
+  .ascii-filter-btn {
+    flex: 1 1 100%;
+    font-size: 0.74rem;
+  }
+  .stat-sep {
+    display: none;
+  }
+  .ascii-stats-table {
+    gap: 6px;
+  }
+}
+
+

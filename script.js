@@ -33,8 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateThemeButtonText() {
     const t = translations[currentLang] || translations.pt;
+    const isDark = currentTheme === 'dark';
+    const icon = isDark ? '☾' : '☼';
+    const rawText = isDark ? t.theme_dark : t.theme_light;
+    const word = rawText.replace(/[\[\]☾☼]/g, '').trim();
     if (themeText) {
-      themeText.textContent = currentTheme === 'dark' ? t.theme_dark : t.theme_light;
+      themeText.innerHTML = `[ <span class="theme-icon">${icon}</span><span class="theme-word"> ${word}</span> ]`;
     }
     if (themeToggle) {
       themeToggle.setAttribute('title', t.theme_title);
@@ -143,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Destaque de navegação ativa ao rolar
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.ascii-nav-item');
+  const navLinks = document.querySelectorAll('.ascii-nav-item, .ascii-mobile-item');
 
   window.addEventListener('scroll', () => {
     const scrollY = window.pageYOffset;
@@ -163,4 +167,50 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Toggle e interações do Menu Mobile
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileNavItems = document.querySelectorAll('.ascii-mobile-item, .mobile-cta-btn');
+
+  if (menuToggle && mobileMenu) {
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      const iconSpan = menuToggle.querySelector('.menu-icon-text');
+      if (iconSpan) iconSpan.textContent = '[ ☰ ]';
+    }
+
+    function toggleMobileMenu() {
+      const willOpen = !mobileMenu.classList.contains('open');
+      mobileMenu.classList.toggle('open', willOpen);
+      menuToggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      const iconSpan = menuToggle.querySelector('.menu-icon-text');
+      if (iconSpan) iconSpan.textContent = willOpen ? '[ ✕ ]' : '[ ☰ ]';
+    }
+
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMobileMenu();
+    });
+
+    mobileNavItems.forEach(item => {
+      item.addEventListener('click', () => {
+        closeMobileMenu();
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        closeMobileMenu();
+      }
+    });
+  }
 });
+

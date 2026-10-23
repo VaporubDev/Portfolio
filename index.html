@@ -56,10 +56,28 @@
         </div>
 
         <button class="ascii-btn ascii-theme-btn" id="theme-toggle" title="Modo Claro e Escuro">
-          <span class="theme-text" id="theme-text">[ ☾ ESCURO ]</span>
+          <span class="theme-text" id="theme-text">[ <span class="theme-icon">☾</span><span class="theme-word"> ESCURO</span> ]</span>
         </button>
 
-        <a href="#contato" class="ascii-btn ascii-btn-highlight" data-i18n="nav_contact_btn">[ FALE COMIGO ]</a>
+        <a href="#contato" class="ascii-btn ascii-btn-highlight nav-cta-desktop" data-i18n="nav_contact_btn">[ FALE COMIGO ]</a>
+
+        <button class="ascii-btn ascii-menu-toggle" id="menu-toggle" aria-label="Menu de Navegação" aria-expanded="false">
+          <span class="menu-icon-text">[ ☰ ]</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- MENU MOBILE RETRÔ ASCII -->
+    <div class="ascii-mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-inner">
+        <div class="mobile-menu-bar-top">+--[ NAVEGAÇÃO ]-----------------------------+</div>
+        <a href="#sobre" class="ascii-mobile-item"><span data-i18n="nav_about">[01] Sobre</span></a>
+        <a href="#habilidades" class="ascii-mobile-item"><span data-i18n="nav_skills">[02] Skills</span></a>
+        <a href="#projetos" class="ascii-mobile-item"><span data-i18n="nav_projects">[03] Projetos</span></a>
+        <a href="#terminal" class="ascii-mobile-item"><span data-i18n="nav_terminal">[04] Terminal</span></a>
+        <a href="#contato" class="ascii-mobile-item"><span data-i18n="nav_contact">[05] Contato</span></a>
+        <a href="#contato" class="ascii-btn ascii-btn-highlight mobile-cta-btn" data-i18n="nav_contact_btn">[ FALE COMIGO ]</a>
+        <div class="mobile-menu-bar-bottom">+--------------------------------------------+</div>
       </div>
     </div>
   </header>
