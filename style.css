@@ -1120,11 +1120,11 @@ body.ascii-body {
   inset: 0;
   background: #0b0914;
   color: var(--ascii-green);
-  padding: 12px;
-  font-size: 0.72rem;
-  line-height: 1.45;
+  padding: 10px 12px;
+  font-size: 0.69rem;
+  line-height: 1.38;
   overflow: hidden;
-  white-space: pre-wrap;
+  white-space: pre;
   z-index: 3;
 }
 

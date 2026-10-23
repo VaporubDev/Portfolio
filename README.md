@@ -2,6 +2,10 @@
 
 > Portfólio temático retrô minimalista construído puramente com caracteres monoespaçados (ASCII), Vanilla JavaScript, animações em Canvas 2D e integração dinâmica com a API do GitHub.
 
+🔗 **[Acesse o Portfólio Online](https://vaporubdev.github.io/Portifolio/)**
+
+![Preview do Portfólio](preview_portfolio.png)
+
 ---
 
 ```text

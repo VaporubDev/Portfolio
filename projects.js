@@ -38,6 +38,23 @@ document.addEventListener('DOMContentLoaded', () => {
       .replace(/'/g, '&#039;');
   }
 
+  // Identifica se o repositório é claramente um site (linguagem HTML/CSS, deploy no github.io ou tópicos de web)
+  function isWebsiteRepo(repo) {
+    if (!repo) return false;
+    const lang = (repo.language || '').toLowerCase();
+    const topics = (repo.topics || []).map(t => String(t).toLowerCase());
+    const name = (repo.name || '').toLowerCase();
+    const demoUrl = getRepoDemoUrl(repo).toLowerCase();
+    const homepage = (repo.homepage || '').toLowerCase();
+
+    const hasWebDeploy = demoUrl.includes('github.io') || homepage.includes('github.io');
+    const hasHtmlCss = lang === 'html' || lang === 'css' || topics.includes('html') || topics.includes('css') || topics.includes('html5') || topics.includes('css3');
+    const isKnownSite = name.includes('freddy') || name.includes('viagem') || name.includes('sabor') || name.includes('portifolio') || name.includes('portfolio');
+    const hasWebTopic = topics.includes('web') || topics.includes('landing') || topics.includes('spa');
+
+    return hasHtmlCss || hasWebDeploy || isKnownSite || hasWebTopic;
+  }
+
   // Identifica a categoria do repositório para suportar os filtros da interface (web, ui, scripts)
   function getRepoCategory(repo) {
     const topics = (repo.topics || []).map(t => String(t).toLowerCase());
@@ -54,10 +71,18 @@ document.addEventListener('DOMContentLoaded', () => {
       figmaUrl.includes('figma.com') ||
       topics.includes('figma');
 
+    const isWeb = isWebsiteRepo(repo);
+
+    // Se tiver apenas C#, apenas Python, Shell, ou apenas JS sem ser site -> script/automação
     const isScript = lang === 'python' ||
       lang === 'shell' ||
       lang === 'bash' ||
+      lang === 'c#' ||
+      lang === 'csharp' ||
+      (lang === 'javascript' && !isWeb) ||
       topics.includes('python') ||
+      topics.includes('c#') ||
+      topics.includes('csharp') ||
       topics.includes('automation') ||
       topics.includes('script') ||
       topics.includes('tools') ||
@@ -67,28 +92,17 @@ document.addEventListener('DOMContentLoaded', () => {
       desc.includes('automação') ||
       desc.includes('automation');
 
-    const isWeb = lang === 'html' ||
-      lang === 'javascript' ||
-      lang === 'css' ||
-      lang === 'typescript' ||
-      topics.includes('web') ||
-      topics.includes('landing') ||
-      name.includes('freddy') ||
-      name.includes('viagem') ||
-      name.includes('sabor') ||
-      (repo.demo_url && repo.demo_url.includes('github.io')) ||
-      (repo.homepage && repo.homepage.includes('github.io'));
-
     const cats = [];
     if (isWeb) cats.push('web');
     if (hasFigmaLink) cats.push('ui');
     if (isScript) cats.push('scripts');
 
-    return cats.join(' ') || 'web';
+    return cats.join(' ') || (isScript ? 'scripts' : 'web');
   }
 
   // Mapeamento específico de tecnologias reais por repositório
   const repoTechTags = {
+    'Portifolio': ['[HTML5]', '[CSS3]', '[JAVASCRIPT]', '[CANVAS]'],
     'automacao-renomear-pdfs': ['[PYTHON]', '[PYPDF]', '[REGEX]', '[AUTOMATION]'],
     'viagem-flow': ['[JAVASCRIPT]', '[LOCALSTORAGE]', '[DOM]', '[FIGMA]'],
     'Five-Night-s-at-Freddy-2': ['[HTML5]', '[JAVASCRIPT]', '[DOM]', '[WEB_GAME]'],
@@ -199,6 +213,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const repoDescriptions = {
+    'Portifolio': {
+      pt: 'Portfólio temático retrô minimalista com ASCII Art, Canvas 2D e terminal CLI interativo.',
+      en: 'Retro minimalist ASCII art portfolio featuring an interactive CLI terminal and reactive 2D Canvas animations.',
+      es: 'Portafolio retro minimalista con arte ASCII, terminal CLI interactivo y animaciones Canvas 2D.',
+      fr: 'Portfolio rétro minimaliste avec art ASCII, terminal CLI interactif et animations Canvas 2D.'
+    },
     'viagem-flow': {
       en: 'Interactive travel management application with payment tracking and associated tasks, built purely with HTML, CSS (native Dark Mode), and JavaScript.',
       es: 'Aplicación interactiva de gestión de viajes, estado de pagos y tareas asociadas, construida puramente con HTML, CSS (con Modo Oscuro nativo) y JavaScript.',
@@ -212,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'Five-Night-s-at-Freddy-2': {
       en: 'Interactive web project recreating Five Nights at Freddy\'s 2 (FNAF 2) using HTML, CSS, and JavaScript technologies.',
       es: 'Proyecto interactivo para crear un sitio web del juego Five Nights at Freddy\'s 2 (FNAF 2) utilizando tecnologías HTML, CSS y JavaScript.',
-      fr: 'Projet interactif de création d\'un site web du jeu Five Nights at Freddy\'s 2 (FNAF 2) en utilisant les technologies HTML, CSS et JavaScript.'
+      fr: 'Projet interactif de création d\'un site web du jeu Five Nights at Freddy\'s 2 (FNAF 2) en utilizando les technologies HTML, CSS et JavaScript.'
     },
     'SaborDoBrasil': {
       pt: 'Interface web gastronômica valorizando a culinária brasileira com design limpo.',
@@ -224,6 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mapeamento de screenshots e prints reais diretamente dos repositórios
   const repoRealPreviews = {
+    'Portifolio': 'preview_portfolio.png',
     'Five-Night-s-at-Freddy-2': 'https://raw.githubusercontent.com/VaporubDev/Five-Night-s-at-Freddy-2/main/Preview_fnaf2.jpeg',
     'SaborDoBrasil': 'https://raw.githubusercontent.com/VaporubDev/SaborDoBrasil/main/assets/Telas_SPA/index.png',
     'viagem-flow': 'https://raw.githubusercontent.com/VaporubDev/viagem-flow/master/plane_adventure.png'
@@ -279,6 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const t = translations[currentLang] || translations.pt;
 
     const cardsHtml = repos.map((repo, idx) => {
+      const isSite = isWebsiteRepo(repo);
       const category = getRepoCategory(repo);
       const topBar = formatCardTopBar(idx, currentLang);
       const isScript = category.includes('scripts');
@@ -305,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       return `
         <!-- GitHub Project Card ${idx + 1} -->
-        <div class="project-ascii-card" data-category="${category}" data-repo-name="${escapeHtml(repo.name)}" data-preview-image="${escapeHtml(previewImg)}">
+        <div class="project-ascii-card" data-category="${category}" data-repo-name="${escapeHtml(repo.name)}" data-language="${escapeHtml(repo.language || '')}" data-is-site="${isSite ? 'true' : 'false'}" data-has-demo="${hasDemo ? 'true' : 'false'}" data-preview-image="${escapeHtml(previewImg)}">
           <div class="card-bar-top">${topBar}</div>
           <div class="card-ascii-content">
             <div class="project-ascii-preview">
@@ -435,7 +457,7 @@ ${asciiPreview}
   }
 
   async function fetchGithubProjects() {
-    const cacheKey = `github_repos_v10_${GITHUB_USERNAME}`;
+    const cacheKey = `github_repos_v12_${GITHUB_USERNAME}`;
 
     try {
       const stored = sessionStorage.getItem(cacheKey);
@@ -515,6 +537,19 @@ ${asciiPreview}
       console.warn('[GitHub Projects API] Erro ao carregar repositórios:', err);
       const fallbackRepos = [
         {
+          name: 'Portifolio',
+          description: 'Portfólio temático retrô minimalista com ASCII Art, Canvas 2D e terminal CLI interativo.',
+          language: 'JavaScript',
+          demo_url: 'https://vaporubdev.github.io/Portifolio/',
+          homepage: 'https://vaporubdev.github.io/Portifolio/',
+          figma_url: '',
+          preview_image: 'preview_portfolio.png',
+          html_url: 'https://github.com/VaporubDev/Portifolio',
+          topics: ['portfolio', 'ascii', 'terminal', 'retro', 'canvas', 'web'],
+          stargazers_count: 0,
+          forks_count: 0
+        },
+        {
           name: 'Five-Night-s-at-Freddy-2',
           description: 'Jogo interativo Five Nights at Freddy\'s 2 adaptado para web com tema retrô.',
           language: 'HTML',
@@ -583,6 +618,8 @@ ${asciiPreview}
   const popoverSpinner = document.getElementById('popover-spinner');
   const popoverCli = document.getElementById('popover-cli');
   const popoverCaption = document.getElementById('popover-caption');
+  const popoverBadge = document.getElementById('popover-badge') || popover?.querySelector('.popover-badge');
+  const popoverTag = document.getElementById('popover-tag') || popover?.querySelector('.popover-tag');
 
   function showProjectPreview(triggerEl) {
     if (!popover) return;
@@ -591,38 +628,71 @@ ${asciiPreview}
 
     const repoName = card.getAttribute('data-repo-name') || card.querySelector('.proj-name')?.textContent.replace(/^>\s*/, '').trim() || 'PROJETO';
     const previewImgUrl = card.getAttribute('data-preview-image') || repoRealPreviews[repoName] || '';
+    const isSite = card.getAttribute('data-is-site') === 'true';
+    const lang = (card.getAttribute('data-language') || '').toLowerCase();
 
     if (popoverTitle) popoverTitle.textContent = `+--[ PREVIEW: ${repoName.toUpperCase().slice(0, 18)} ]`;
-    if (popoverCaption) popoverCaption.textContent = `> ${repoName} (print real do projeto)`;
 
-    if (previewImgUrl) {
-      if (popoverCli) popoverCli.style.display = 'none';
-      if (popoverSpinner) {
-        popoverSpinner.style.display = 'block';
-        popoverSpinner.textContent = '[ CARREGANDO INTERFACE... ]';
-      }
-      if (popoverImg) {
-        popoverImg.classList.remove('loaded');
-        popoverImg.style.display = 'block';
-        popoverImg.src = previewImgUrl;
-        popoverImg.onload = () => {
-          if (popoverSpinner) popoverSpinner.style.display = 'none';
-          popoverImg.classList.add('loaded');
-        };
-        popoverImg.onerror = () => {
-          if (popoverSpinner) {
-            popoverSpinner.style.display = 'block';
-            popoverSpinner.textContent = '[ IMAGEM DO REPOSITÓRIO ]';
-          }
-        };
-      }
-    } else {
-      // Script Python / CLI sem imagem: renderiza o terminal real executando a automação
+    // Função interna para renderizar o estado de loading / aguardando informações adicionais para sites
+    function renderSiteLoadingState() {
       if (popoverImg) popoverImg.style.display = 'none';
       if (popoverSpinner) popoverSpinner.style.display = 'none';
+      if (popoverBadge) popoverBadge.textContent = '[ LOADING ]';
+      if (popoverTag) popoverTag.textContent = '[ AGUARDANDO DADOS ]';
+      if (popoverCaption) popoverCaption.textContent = `> ${repoName} (aguardando informações adicionais)`;
       if (popoverCli) {
         popoverCli.style.display = 'block';
-        popoverCli.textContent = `> python renomear.py\n[SCAN] Varrendo pasta de comprovantes...\n[EXTRACT] Lendo PDFs com pypdf...\n[REGEX] Favorecido identificado:\n        "MARIA SILVA SANTOS"\n[RENAME] -> 2026_02_MARIA_SILVA.pdf [OK]\n[STATUS] 142 arquivos renomeados com sucesso!`;
+        popoverCli.textContent = `┌────────────────────────────────────┐\n│ [WEB INTERFACE] SYNC PENDENTE...   │\n├────────────────────────────────────┤\n│   o   STATUS: [AGUARDANDO DADOS]   │\n│  /\\_/ DEPLOY: GITHUB.IO OU PRINT   │\n│  I7|  CARREGANDO INFORMAÇÕES...    │\n└────────────────────────────────────┘\n> Aguardando deploy ou print no README`;
+      }
+    }
+
+    // Se é claramente um site (tem HTML/CSS, deploy ou interface web)
+    if (isSite) {
+      if (previewImgUrl) {
+        if (popoverCli) popoverCli.style.display = 'none';
+        if (popoverBadge) popoverBadge.textContent = '[ REAL_UI ]';
+        if (popoverTag) popoverTag.textContent = '[ ASSET REAL ]';
+        if (popoverCaption) popoverCaption.textContent = `> ${repoName} (print real do projeto)`;
+        if (popoverSpinner) {
+          popoverSpinner.style.display = 'block';
+          popoverSpinner.textContent = '[ CARREGANDO INTERFACE... ]';
+        }
+        if (popoverImg) {
+          popoverImg.classList.remove('loaded');
+          popoverImg.style.display = 'block';
+          popoverImg.src = previewImgUrl;
+          popoverImg.onload = () => {
+            if (popoverSpinner) popoverSpinner.style.display = 'none';
+            popoverImg.classList.add('loaded');
+          };
+          popoverImg.onerror = () => {
+            // Se a imagem falhar ao carregar, exibe o estado de loading aguardando dados
+            renderSiteLoadingState();
+          };
+        }
+      } else {
+        // Site sem imagem ou sem link do github.io: exibe loading aguardando informações adicionais
+        renderSiteLoadingState();
+      }
+    } else {
+      // Repositório de automação e script (C#, JS puro, Python, Shell)
+      if (popoverImg) popoverImg.style.display = 'none';
+      if (popoverSpinner) popoverSpinner.style.display = 'none';
+      if (popoverBadge) popoverBadge.textContent = '[ SCRIPT ]';
+      if (popoverTag) popoverTag.textContent = '[ AUTOMATION ]';
+      if (popoverCaption) popoverCaption.textContent = `> ${repoName} (script de automação)`;
+
+      if (popoverCli) {
+        popoverCli.style.display = 'block';
+        if (lang === 'c#' || lang === 'csharp') {
+          popoverCli.textContent = `> dotnet run --project Automation.csproj\n[BUILD] Compilando rotinas C#... [OK]\n[EXEC] Executando serviço em segundo plano...\n[TASK] Processando registros de automação...\n[STATUS] Rotina finalizada com sucesso!`;
+        } else if (lang === 'javascript' || lang === 'node') {
+          popoverCli.textContent = `> node index.js\n[INIT] Inicializando script de automação...\n[RUN] Processando pipelines assíncronos...\n[DATA] Validação de dados concluída...\n[STATUS] Script finalizado com sucesso!`;
+        } else if (lang === 'shell' || lang === 'bash') {
+          popoverCli.textContent = `> ./automation.sh\n[BASH] Iniciando script de automação...\n[CRON] Processando rotina em lote...\n[STATUS] Execução concluída com código 0.`;
+        } else {
+          popoverCli.textContent = `> python renomear.py\n[SCAN] Varrendo pasta de comprovantes...\n[EXTRACT] Lendo PDFs com pypdf...\n[REGEX] Favorecido identificado:\n        "MARIA SILVA SANTOS"\n[RENAME] -> 2026_02_MARIA_SILVA.pdf [OK]\n[STATUS] 142 arquivos renomeados com sucesso!`;
+        }
       }
     }
 
