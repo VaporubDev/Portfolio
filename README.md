@@ -1,8 +1,8 @@
-# 🖥️ Érica Paixão // Portfólio ASCII & Terminal Interativo
+﻿# 🖥️ Érica Paixão // Portfólio ASCII & Terminal Interativo
 
 > Portfólio temático retrô minimalista construído puramente com caracteres monoespaçados (ASCII), Vanilla JavaScript, animações em Canvas 2D e integração dinâmica com a API do GitHub.
 
-🔗 **[Acesse o Portfólio Online](https://vaporubdev.github.io/Portifolio/)**
+🔗 **[Acesse o Portfólio Online](https://vaporubdev.github.io/Portfolio/)**
 
 ![Preview do Portfólio](preview_portfolio.png)
 
@@ -60,12 +60,12 @@ Como o projeto é desenvolvido com código web puro, não há etapa complexa de 
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/VaporubDev/Portifolio.git
+   git clone https://github.com/VaporubDev/Portfolio.git
    ```
 
 2. **Abra a pasta do projeto:**
    ```bash
-   cd Portifolio
+   cd Portfolio
    ```
 
 3. **Inicie um servidor estático local** (para habilitar o carregamento assíncrono de módulos e assets):
@@ -93,3 +93,4 @@ Como o projeto é desenvolvido com código web puro, não há etapa complexa de 
 ---
 
 Desenvolvido com carinho e código limpo por **Érica Paixão**. © 2026
+

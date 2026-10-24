@@ -1,4 +1,4 @@
-// Integração com a API do GitHub e gerenciamento de filtros de projetos
+﻿// Integração com a API do GitHub e gerenciamento de filtros de projetos
 const GITHUB_USERNAME = 'VaporubDev';
 let cachedGithubRepos = null;
 let currentProjectFilter = 'all';
@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mapeamento específico de tecnologias reais por repositório
   const repoTechTags = {
+    'Portfolio': ['[HTML5]', '[CSS3]', '[JAVASCRIPT]', '[CANVAS]'],
     'Portifolio': ['[HTML5]', '[CSS3]', '[JAVASCRIPT]', '[CANVAS]'],
     'automacao-renomear-pdfs': ['[PYTHON]', '[PYPDF]', '[REGEX]', '[AUTOMATION]'],
     'viagem-flow': ['[JAVASCRIPT]', '[LOCALSTORAGE]', '[DOM]', '[FIGMA]'],
@@ -213,6 +214,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const repoDescriptions = {
+    'Portfolio': {
+      pt: 'Portfólio temático retrô minimalista com ASCII Art, Canvas 2D e terminal CLI interativo.',
+      en: 'Retro minimalist ASCII art portfolio featuring an interactive CLI terminal and reactive 2D Canvas animations.',
+      es: 'Portafolio retro minimalista con arte ASCII, terminal CLI interactivo y animaciones Canvas 2D.',
+      fr: 'Portfolio rétro minimaliste avec art ASCII, terminal CLI interactif et animations Canvas 2D.'
+    },
     'Portifolio': {
       pt: 'Portfólio temático retrô minimalista com ASCII Art, Canvas 2D e terminal CLI interativo.',
       en: 'Retro minimalist ASCII art portfolio featuring an interactive CLI terminal and reactive 2D Canvas animations.',
@@ -244,6 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mapeamento de screenshots e prints reais diretamente dos repositórios
   const repoRealPreviews = {
+    'Portfolio': 'preview_portfolio.png',
     'Portifolio': 'preview_portfolio.png',
     'Five-Night-s-at-Freddy-2': 'https://raw.githubusercontent.com/VaporubDev/Five-Night-s-at-Freddy-2/main/Preview_fnaf2.jpeg',
     'SaborDoBrasil': 'https://raw.githubusercontent.com/VaporubDev/SaborDoBrasil/main/assets/Telas_SPA/index.png',
@@ -537,14 +545,14 @@ ${asciiPreview}
       console.warn('[GitHub Projects API] Erro ao carregar repositórios:', err);
       const fallbackRepos = [
         {
-          name: 'Portifolio',
+          name: 'Portfolio',
           description: 'Portfólio temático retrô minimalista com ASCII Art, Canvas 2D e terminal CLI interativo.',
           language: 'JavaScript',
-          demo_url: 'https://vaporubdev.github.io/Portifolio/',
-          homepage: 'https://vaporubdev.github.io/Portifolio/',
+          demo_url: 'https://vaporubdev.github.io/Portfolio/',
+          homepage: 'https://vaporubdev.github.io/Portfolio/',
           figma_url: '',
           preview_image: 'preview_portfolio.png',
-          html_url: 'https://github.com/VaporubDev/Portifolio',
+          html_url: 'https://github.com/VaporubDev/Portfolio',
           topics: ['portfolio', 'ascii', 'terminal', 'retro', 'canvas', 'web'],
           stargazers_count: 0,
           forks_count: 0
@@ -744,3 +752,4 @@ ${asciiPreview}
 
   window.renderProjectCards = renderProjectCards;
 });
+
