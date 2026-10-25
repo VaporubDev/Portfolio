@@ -1,8 +1,8 @@
-/* ==========================================================================
-   Paleta:
-   Roxo:  #d015de (usuário/dev & destaque)
-   Cinza: #7e828a (mesa/cadeira/computador)
-   ========================================================================== */
+/*
+  Paleta:
+  Roxo:  #d015de (usuário/dev & destaque)
+  Cinza: #7e828a (mesa/cadeira/computador)
+*/
 :root {
   --bg-main: #0c0d12;
   --bg-panel: rgba(19, 21, 31, 0.86);
@@ -123,9 +123,7 @@
   opacity: 0.03;
 }
 
-/* ==========================================================================
-   Reset & Monospace Rules
-   ========================================================================== */
+/* Reset & Monospace Rules */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -166,9 +164,7 @@ body.ascii-body {
   opacity: 0.35;
 }
 
-/* ==========================================================================
-   Canvas de Fundo Animado ASCII (Fluid Scroll Parallax & Arcade)
-   ========================================================================== */
+/* Canvas de Fundo Animado ASCII (Fluid Scroll Parallax & Arcade) */
 .ascii-bg-canvas {
   position: fixed;
   top: 0;
@@ -213,9 +209,7 @@ body.ascii-body {
   color: var(--ascii-green);
 }
 
-/* ==========================================================================
-   Ícone ASCII da Foto
-   ========================================================================== */
+/* Ícone ASCII da Foto */
 .ascii-char-logo,
 .ascii-hero-avatar,
 .ascii-char-footer,
@@ -248,9 +242,7 @@ body.ascii-body {
   font-size: 16px;
 }
 
-/* ==========================================================================
-   Navbar
-   ========================================================================== */
+/* Navbar */
 .ascii-navbar {
   position: fixed;
   top: 0;
@@ -390,9 +382,7 @@ body.ascii-body {
   color: #ffffff;
 }
 
-/* ==========================================================================
-   Menu Mobile Retrô ASCII
-   ========================================================================== */
+/* Menu Mobile Retrô ASCII */
 .ascii-mobile-menu {
   display: none;
   position: absolute;
@@ -485,9 +475,7 @@ body.ascii-body {
   color: #64748b;
 }
 
-/* ==========================================================================
-   Language Selector Dropdown
-   ========================================================================== */
+/* Language Selector Dropdown */
 .ascii-lang-select-wrap {
   position: relative;
 }
@@ -544,9 +532,7 @@ body.ascii-body {
   color: #ffffff;
 }
 
-/* ==========================================================================
-   ASCII Buttons
-   ========================================================================== */
+/* ASCII Buttons */
 .ascii-btn {
   display: inline-flex;
   align-items: center;
@@ -606,9 +592,7 @@ body.ascii-body {
   padding: 8px 12px;
 }
 
-/* ==========================================================================
-   Hero Section
-   ========================================================================== */
+/* Hero Section */
 .hero-section {
   padding-top: 150px;
   padding-bottom: 90px;
@@ -788,9 +772,7 @@ body.ascii-body {
   color: var(--ascii-orange);
 }
 
-/* ==========================================================================
-   ASCII Dividers & Section Headers
-   ========================================================================== */
+/* ASCII Dividers & Section Headers */
 .ascii-divider {
   text-align: center;
   color: var(--ascii-border);
@@ -841,9 +823,7 @@ body.ascii-body {
   opacity: 0.7;
 }
 
-/* ==========================================================================
-   ASCII Cards & Grids
-   ========================================================================== */
+/* ASCII Cards & Grids */
 .ascii-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -924,12 +904,8 @@ body.ascii-body {
   text-align: center;
 }
 
-/* ==========================================================================
-   Skills Section
-   ========================================================================== */
-/* ==========================================================================
-   Trajectory & Experience Section
-   ========================================================================== */
+/* Skills Section */
+/* Trajectory & Experience Section */
 .text-left-inner {
   align-items: flex-start !important;
   text-align: left !important;
@@ -1066,9 +1042,7 @@ body.ascii-body {
   text-decoration: none;
 }
 
-/* ==========================================================================
-   Skills Section (Categorized Tag Boxes)
-   ========================================================================== */
+/* Skills Section (Categorized Tag Boxes) */
 .skills-categories-grid {
   
   display: grid;
@@ -1181,9 +1155,7 @@ body.ascii-body {
   color: #ffffff !important;
 }
 
-/* ==========================================================================
-   Projects Section
-   ========================================================================== */
+/* Projects Section */
 .project-filters {
   display: flex;
   justify-content: center;
@@ -1328,9 +1300,7 @@ body.ascii-body {
   margin-top: auto;
 }
 
-/* ==========================================================================
-   Preview em Hover / Popover Flutuante dos Projetos
-   ========================================================================== */
+/* Preview em Hover / Popover Flutuante dos Projetos */
 .project-preview-popover {
   position: fixed;
   z-index: 10000;
@@ -1451,9 +1421,7 @@ body.ascii-body {
   color: #5af78e;
 }
 
-/* ==========================================================================
-   Terminal Interativo CLI
-   ========================================================================== */
+/* Terminal Interativo CLI */
 .interactive-terminal-box {
   background: var(--bg-panel);
   border: 1px solid var(--ascii-border);
@@ -1502,9 +1470,7 @@ body.ascii-body {
   flex: 1;
 }
 
-/* ==========================================================================
-   Contato Section
-   ========================================================================== */
+/* Contato Section */
 #contato {
   scroll-margin-top: 72px;
 }
@@ -1652,17 +1618,26 @@ body.ascii-body {
   display: inline-flex;
   align-items: center;
   gap: 2px;
+  text-decoration: none !important;
+}
+
+.chip-inner-underline {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-bottom: 1.5px solid currentColor;
+  padding-bottom: 2px;
 }
 
 .chip-svg-icon {
   display: inline-block;
-  vertical-align: -2px;
+  vertical-align: middle;
   flex-shrink: 0;
   transition: transform 0.2s ease;
 }
 
 .ascii-chip:hover .chip-svg-icon {
-  transform: scale(1.15);
+  transform: scale(1.1);
 }
 
 .contact-social-row .ascii-chip {
@@ -1693,9 +1668,7 @@ body.ascii-body {
   align-items: center;
 }
 
-/* ==========================================================================
-   Footer
-   ========================================================================== */
+/* Footer */
 .ascii-footer {
   padding: 40px 0;
   margin-top: 0;
@@ -1720,9 +1693,7 @@ body.ascii-body {
   line-height: 1.5;
 }
 
-/* ==========================================================================
-   Toast Notification
-   ========================================================================== */
+/* Toast Notification */
 .ascii-toast {
   position: fixed;
   bottom: 24px;
@@ -1750,9 +1721,7 @@ body.ascii-body {
   transform: translateY(0);
 }
 
-/* ==========================================================================
-   Responsive Breakpoints & Mobile Optimization
-   ========================================================================== */
+/* Responsive Breakpoints & Mobile Optimization */
 
 /* Salvaguardas globais contra transbordamento horizontal */
 .ascii-divider,
