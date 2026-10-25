@@ -195,6 +195,18 @@ const translations = {
       traj_btn_cv: "[ ⇩ BAIXAR CURRÍCULO COMPLETO (PDF) ]"
     ,
       contact_btn_cv: "[ ⇩ BAIXAR CURRÍCULO (PDF) ]"
+    ,
+      chip_resp: "[ DESIGN RESPONSIVO ]",
+      chip_rel_model: "[ MODELAGEM RELACIONAL ]",
+      chip_queries_joins: "[ CONSULTAS & JOINS ]",
+      chip_integrity_tx: "[ INTEGRIDADE & TRANSAÇÕES ]",
+      chip_script_auto: "[ AUTOMAÇÃO DE SCRIPTS ]",
+      chip_it_support: "[ SUPORTE DE TI / REDES ]",
+      chip_ds: "[ DESIGN SYSTEMS ]",
+      chip_auto_layout: "[ AUTO LAYOUT ]",
+      chip_variants_comp: "[ VARIANTES & COMPONENTES ]",
+      chip_wireframes: "[ WIREFRAMES & FLUXOS ]",
+      chip_svg_art: "[ SVG ART & ASCII ]"
     },
     en: {
       lang_btn: '[ EN ]',
@@ -392,6 +404,18 @@ const translations = {
       traj_btn_cv: "[ ⇩ DOWNLOAD FULL RESUME (PDF) ]"
     ,
       contact_btn_cv: "[ ⇩ DOWNLOAD RESUME (PDF) ]"
+    ,
+      chip_resp: "[ RESPONSIVE DESIGN ]",
+      chip_rel_model: "[ RELATIONAL MODELING ]",
+      chip_queries_joins: "[ QUERIES & JOINS ]",
+      chip_integrity_tx: "[ INTEGRITY & TRANSACTIONS ]",
+      chip_script_auto: "[ SCRIPT AUTOMATION ]",
+      chip_it_support: "[ IT SUPPORT & NETWORKS ]",
+      chip_ds: "[ DESIGN SYSTEMS ]",
+      chip_auto_layout: "[ AUTO LAYOUT ]",
+      chip_variants_comp: "[ VARIANTS & COMPONENTS ]",
+      chip_wireframes: "[ WIREFRAMES & FLOWS ]",
+      chip_svg_art: "[ SVG ART & ASCII ]"
     },
     es: {
       lang_btn: '[ ES ]',
@@ -589,6 +613,18 @@ const translations = {
       traj_btn_cv: "[ ⇩ DESCARGAR CURRÍCULUM COMPLETO (PDF) ]"
     ,
       contact_btn_cv: "[ ⇩ DESCARGAR CURRÍCULUM (PDF) ]"
+    ,
+      chip_resp: "[ DISEÑO RESPONSIVO ]",
+      chip_rel_model: "[ MODELADO RELACIONAL ]",
+      chip_queries_joins: "[ CONSULTAS Y JOINS ]",
+      chip_integrity_tx: "[ INTEGRIDAD Y TRANSACCIONES ]",
+      chip_script_auto: "[ AUTOMATIZACIÓN DE SCRIPTS ]",
+      chip_it_support: "[ SOPORTE TI Y REDES ]",
+      chip_ds: "[ DESIGN SYSTEMS ]",
+      chip_auto_layout: "[ AUTO LAYOUT ]",
+      chip_variants_comp: "[ VARIANTES Y COMPONENTES ]",
+      chip_wireframes: "[ WIREFRAMES Y FLUJOS ]",
+      chip_svg_art: "[ ARTE SVG Y ASCII ]"
     },
     fr: {
       lang_btn: '[ FR ]',
@@ -787,6 +823,18 @@ const translations = {
       traj_btn_cv: "[ ⇩ TÉLÉCHARGER LE CV COMPLET (PDF) ]"
     ,
       contact_btn_cv: "[ ⇩ TÉLÉCHARGER LE CV (PDF) ]"
+    ,
+      chip_resp: "[ DESIGN RÉACTIF ]",
+      chip_rel_model: "[ MODÉLISATION RELATIONNELLE ]",
+      chip_queries_joins: "[ REQUÊTES & JOINTURES ]",
+      chip_integrity_tx: "[ INTÉGRITÉ & TRANSACTIONS ]",
+      chip_script_auto: "[ AUTOMATISATION DE SCRIPTS ]",
+      chip_it_support: "[ SUPPORT IT & RÉSEAUX ]",
+      chip_ds: "[ DESIGN SYSTEMS ]",
+      chip_auto_layout: "[ AUTO LAYOUT ]",
+      chip_variants_comp: "[ VARIANTES & COMPOSANTS ]",
+      chip_wireframes: "[ WIREFRAMES & FLUX ]",
+      chip_svg_art: "[ ART SVG & ASCII ]"
     };
 
   let currentLang = localStorage.getItem('portfolio_lang') || 'pt';
