@@ -1,4 +1,4 @@
-﻿// Integração com a API do GitHub e gerenciamento de filtros de projetos
+// Integração com a API do GitHub e gerenciamento de filtros de projetos
 const GITHUB_USERNAME = 'VaporubDev';
 let cachedGithubRepos = null;
 let currentProjectFilter = 'all';
@@ -214,6 +214,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const repoDescriptions = {
+    'automacao-linkedin': {
+      pt: 'Automação que monitora novos repositórios no GitHub e cria rascunhos de publicações técnicas para o LinkedIn via IA (Gemini).',
+      en: 'Automation that monitors GitHub updates and drafts technical LinkedIn posts via Google Gemini AI with developer approval.',
+      es: 'Automatización que monitorea repositorios de GitHub y redacta publicaciones técnicas para LinkedIn vía IA (Gemini).',
+      fr: 'Automatisation surveillant les dépôts GitHub et générant des publications LinkedIn techniques via IA (Gemini).'
+    },
+    'aprenda-mais-enem': {
+      pt: 'Plataforma de estudos completa focada no ENEM, reunindo cronogramas, simulados interativos e conteúdos organizados.',
+      en: 'Comprehensive study platform for ENEM exam preparation with study schedules, mock tests, and organized resources.',
+      es: 'Plataforma de estudio para el examen ENEM con cronogramas, simulacros interactivos y contenidos estructurados.',
+      fr: "Plateforme d'apprentissage pour l'examen ENEM avec plannings de révision, tests et ressources organisées."
+    },
     'Portfolio': {
       pt: 'Portfólio temático retrô minimalista com ASCII Art, Canvas 2D e terminal CLI interativo.',
       en: 'Retro minimalist ASCII art portfolio featuring an interactive CLI terminal and reactive 2D Canvas animations.',
@@ -255,7 +267,14 @@ document.addEventListener('DOMContentLoaded', () => {
     'Portifolio': 'preview_portfolio.png',
     'Five-Night-s-at-Freddy-2': 'https://raw.githubusercontent.com/VaporubDev/Five-Night-s-at-Freddy-2/main/Preview_fnaf2.jpeg',
     'SaborDoBrasil': 'https://raw.githubusercontent.com/VaporubDev/SaborDoBrasil/main/assets/Telas_SPA/index.png',
-    'viagem-flow': 'https://raw.githubusercontent.com/VaporubDev/viagem-flow/master/plane_adventure.png'
+    'viagem-flow': 'https://raw.githubusercontent.com/VaporubDev/viagem-flow/master/plane_adventure.png',
+    'aprenda-mais-enem': 'https://raw.githubusercontent.com/VaporubDev/aprenda-mais-enem/main/preview.png'
+  };
+
+  // Terminais interativos sob medida para cada script ou ferramenta CLI
+  const customScriptTerminals = {
+    'automacao-linkedin': `> python main.py\n[CONFIG] Carregando credenciais da API do LinkedIn... [OK]\n[GITHUB] Verificando novos commits em VaporubDev...\n[GEMINI] Gerando rascunho de postagem com IA...\n[MAIL] Enviando Magic Link de aprovação por e-mail...\n[STATUS] Aguardando aprovação para publicação!`,
+    'automacao-renomear-pdfs': `> python renomear.py\n[SCAN] Varrendo pasta de comprovantes...\n[EXTRACT] Lendo PDFs com pypdf e Regex...\n[REGEX] Favorecido identificado: "MARIA SILVA SANTOS"\n[RENAME] -> 2026_02_MARIA_SILVA.pdf [OK]\n[STATUS] 142 arquivos renomeados com sucesso!`
   };
 
   const dynamicDescCache = {};
@@ -692,14 +711,16 @@ ${asciiPreview}
 
       if (popoverCli) {
         popoverCli.style.display = 'block';
-        if (lang === 'c#' || lang === 'csharp') {
-          popoverCli.textContent = `> dotnet run --project Automation.csproj\n[BUILD] Compilando rotinas C#... [OK]\n[EXEC] Executando serviço em segundo plano...\n[TASK] Processando registros de automação...\n[STATUS] Rotina finalizada com sucesso!`;
+        if (customScriptTerminals[repoName]) {
+          popoverCli.textContent = customScriptTerminals[repoName];
+        } else if (lang === 'c#' || lang === 'csharp') {
+          popoverCli.textContent = `> dotnet run --project ${repoName}.csproj\n[BUILD] Compilando rotinas C#... [OK]\n[EXEC] Executando serviço em segundo plano...\n[TASK] Processando registros...\n[STATUS] Rotina finalizada com sucesso!`;
         } else if (lang === 'javascript' || lang === 'node') {
-          popoverCli.textContent = `> node index.js\n[INIT] Inicializando script de automação...\n[RUN] Processando pipelines assíncronos...\n[DATA] Validação de dados concluída...\n[STATUS] Script finalizado com sucesso!`;
+          popoverCli.textContent = `> node index.js --repo=${repoName}\n[INIT] Inicializando script de automação...\n[RUN] Processando pipelines assíncronos...\n[DATA] Validação de dados concluída...\n[STATUS] Script finalizado com sucesso!`;
         } else if (lang === 'shell' || lang === 'bash') {
-          popoverCli.textContent = `> ./automation.sh\n[BASH] Iniciando script de automação...\n[CRON] Processando rotina em lote...\n[STATUS] Execução concluída com código 0.`;
+          popoverCli.textContent = `> ./${repoName}.sh\n[BASH] Iniciando automação em shell...\n[CRON] Processando rotina em lote...\n[STATUS] Execução concluída com código 0.`;
         } else {
-          popoverCli.textContent = `> python renomear.py\n[SCAN] Varrendo pasta de comprovantes...\n[EXTRACT] Lendo PDFs com pypdf...\n[REGEX] Favorecido identificado:\n        "MARIA SILVA SANTOS"\n[RENAME] -> 2026_02_MARIA_SILVA.pdf [OK]\n[STATUS] 142 arquivos renomeados com sucesso!`;
+          popoverCli.textContent = `> python main.py --app=${repoName}\n[INIT] Inicializando rotina em Python...\n[TASK] Executando tarefas agendadas...\n[STATUS] Operação concluída com sucesso!`;
         }
       }
     }
@@ -718,15 +739,21 @@ ${asciiPreview}
   function positionPopover(targetEl) {
     if (!popover) return;
     const rect = targetEl.getBoundingClientRect();
-    const popoverWidth = 320;
+    const isMobile = window.innerWidth <= 768;
+    const popoverWidth = Math.min(320, window.innerWidth - 32);
     const popoverHeight = 240;
 
     let left = rect.left + (rect.width / 2) - (popoverWidth / 2);
     left = Math.max(16, Math.min(left, window.innerWidth - popoverWidth - 16));
 
     let top = rect.top - popoverHeight - 12;
-    if (top < 16) {
+    if (top < 16 || isMobile) {
       top = rect.bottom + 12;
+    }
+
+    // Se no mobile ultrapassar a parte inferior da janela visível, posiciona no centro da viewport
+    if (top + popoverHeight > window.innerHeight - 16) {
+      top = Math.max(16, (window.innerHeight - popoverHeight) / 2);
     }
 
     popover.style.left = `${Math.round(left)}px`;
@@ -734,6 +761,7 @@ ${asciiPreview}
   }
 
   if (projectsGrid) {
+    // Desktop: hover com mouse
     projectsGrid.addEventListener('mouseover', (e) => {
       const trigger = e.target.closest('.proj-name, [data-i18n-role="demo"], [data-i18n$="_demo"], [data-i18n$="_figma"], [data-i18n$="_app"]');
       if (trigger) {
@@ -747,6 +775,57 @@ ${asciiPreview}
         hideProjectPreview();
       }
     });
+
+    // Mobile: toque longo (segurar por 350ms no card ou no nome do projeto)
+    let touchTimer = null;
+    let touchTarget = null;
+    let isLongPress = false;
+
+    projectsGrid.addEventListener('touchstart', (e) => {
+      const trigger = e.target.closest('.project-ascii-card, .proj-name, [data-i18n-role="demo"]');
+      if (!trigger) return;
+      touchTarget = trigger;
+      isLongPress = false;
+
+      touchTimer = setTimeout(() => {
+        isLongPress = true;
+        showProjectPreview(touchTarget);
+        if (navigator.vibrate) {
+          try { navigator.vibrate(30); } catch (err) {}
+        }
+      }, 350);
+    }, { passive: true });
+
+    projectsGrid.addEventListener('touchmove', () => {
+      if (touchTimer) {
+        clearTimeout(touchTimer);
+        touchTimer = null;
+      }
+    }, { passive: true });
+
+    projectsGrid.addEventListener('touchend', () => {
+      if (touchTimer) {
+        clearTimeout(touchTimer);
+        touchTimer = null;
+      }
+    });
+
+    projectsGrid.addEventListener('touchcancel', () => {
+      if (touchTimer) {
+        clearTimeout(touchTimer);
+        touchTimer = null;
+      }
+      hideProjectPreview();
+    });
+
+    // Fecha o preview ao tocar em qualquer outro lugar fora dele no mobile
+    document.addEventListener('touchstart', (e) => {
+      if (popover && popover.classList.contains('visible')) {
+        if (!popover.contains(e.target) && !e.target.closest('.project-ascii-card')) {
+          hideProjectPreview();
+        }
+      }
+    }, { passive: true });
   }
 
 

@@ -48,7 +48,8 @@ I7|   Workstation, screen & clean code.`,
         return `[ REPOSITÓRIOS GITHUB ]\n  01. viagem-flow\n  02. automacao-renomear-pdfs\n  03. Five-Night-s-at-Freddy-2`;
       },
 
-      contact: `[ CONTACT ]
+      contact: `[ CANAIS DE CONTATO / CONTACT ]
+  Telefone/WhatsApp: +55 (71) 98727-4921
   Email: florserena.epg203@gmail.com
   GitHub: https://github.com/VaporubDev
   Linkedin: https://www.linkedin.com/in/erica-paixao-gois/
