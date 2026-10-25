@@ -17,26 +17,26 @@ const translations = {
       hero_btn_projects: '[► VER PROJETOS]',
       hero_btn_terminal: '[⚙ ABRIR TERMINAL]',
       hero_btn_contact: '[✉ ENVIAR MENSAGEM]',
-      stat_exp_val: '+1 ANO',
-      stat_exp_desc: '/* Experiência */',
-      stat_proj_val: '+5 PROJ',
-      stat_proj_desc: '/* Prontos */',
-      stat_craft_val: 'FULLSTACK',
-      stat_craft_desc: '/* APIs & Interface */',
-      about_tag: '// 01_ABOUT_ME',
-      about_heading: 'FILOSOFIA & ABORDAGEM',
-      about_sub: 'Construção de aplicações completas: do modelo de dados ao detalhe visual da interface.',
-      about_card1_title: '+--[ UI/UX & PROTÓTIPO ]--------------+',
-      about_card1_ascii: '.---.  [ DESIGN SYSTEMS & FIGMA ]\n|[_]|  Componentização rigorosa,\n|:::|  fluxos intuitivos e alta\n\'---\'  fidelidade prontos para dev.',
-      about_card1_text: 'Concepção visual centrada no usuário, estruturada em Auto Layout, variáveis e bibliotecas de componentes escaláveis no Figma.',
-      about_card2_title: '+--[ BACKEND & DADOS ]----------------+',
-      about_card2_ascii: '+-+    [ ARQUITETURA & APIS ]\n| |+-+ Lógica de negócio robusta,\n+-+| | APIs REST e modelagem de\n  +-\'  bases de dados relacionais.',
-      about_card2_text: 'Modelagem e gestão de dados relacionais com consultas eficientes, garantindo integridade transacional, segurança e escalabilidade nas regras de negócio.',
-      about_card3_title: '+--[ FRONTEND & INTEGRAÇÃO ]----------+',
-      about_card3_ascii: '| | |  [ INTERFACES EFICIENTES ]\n[===]  Integração fluida com APIs,\n \\=/   código semântico, limpo e\n  !    foco em alta performance.',
-      about_card3_text: 'Implementação moderna orientada a componentes, comunicação assíncrona com o backend e interfaces responsivas sem excesso de dependências.',
-      skills_tag: '// 02_SKILLS_AND_STACK',
-      skills_heading: 'HABILIDADES TÉCNICAS',
+      stat_exp_val: "+1 ANO",
+      stat_exp_desc: "/* Experiência */",
+      stat_proj_val: "+5 PROJ",
+      stat_proj_desc: "/* Prontos */",
+      stat_craft_val: "FULLSTACK",
+      stat_craft_desc: "/* APIs & Interface */",
+      about_tag: "// 01_SOBRE_MIM",
+            about_heading: "QUEM SOU EU",
+      about_sub: "Desenvolvedora Fullstack & UI Designer com foco em soluções eficientes, código limpo e autonomia prática.",
+      about_card1_title: "+--[ PERFIL & IDENTIDADE ]------------+",
+      about_card1_ascii: ".---.  [ FULLSTACK & UI DESIGN ]\n|[_]|  Conexão direta entre\n|:::|  arquitetura sólida e\n'---'  interfaces intuitivas.",
+      about_card1_text: "Estudante de ADS na UNIFACS com vivência em suporte de TI e desenvolvimento. Crio sistemas completos pensando tanto na estrutura de dados quanto na usabilidade final.",
+      about_card2_title: "+--[ RESOLUÇÃO DE PROBLEMAS ]---------+",
+      about_card2_ascii: "+-+    [ PRAGMATISMO & CÓDIGO ]\n| |+-+ Automação de rotinas,\n+-+| | consultas SQL otimizadas\n  +-+' e foco em manutenção.",
+      about_card2_text: "Experiência prática com Java, C#, Python, SQL e Git na WEX/ISBET: diagnóstico rápido de incidentes, automação de processos repetitivos e desenvolvimento sem complexidade desnecessária.",
+      about_card3_title: "+--[ DIFERENCIAL & OBJETIVO ]---------+",
+      about_card3_ascii: "| | |  [ PRONTA P/ SOMAR ]\n[===]  Inglês certificado (TOEIC),\n \\=/   prototipagem ágil no Figma\n  !    e disponibilidade imediata.",
+      about_card3_text: "Em busca de oportunidades como Estagiária ou Desenvolvedora Júnior. Combino comunicação clara, leitura técnica em inglês e capacidade contínua de aprendizado rápido.",
+      skills_tag: "// 03_STACK_TECNICA",
+      skills_heading: "HABILIDADES & STACK TÉCNICA",
       skills_sub: 'Competências e ferramentas aplicadas na concepção de sistemas completos, do design à base de dados.',
       skill_label_1: '> FRONTEND / JS, REACT, VUE, JQUERY, HTML5/CSS3/SVG',
       skill_bar_1: '[██████████████████░░] [ PROFICIENTE ]',
@@ -51,7 +51,7 @@ const translations = {
       skill_label_6: '> UI/UX DESIGN / FIGMA, DESIGN SYSTEMS & SVG',
       skill_bar_6: '[███████████████████░] [ AVANÇADO ]',
       chip_css: '[ #CSS_MODERNO ]',
-      projects_tag: '// 03_FEATURED_PROJECTS',
+      projects_tag: "// 04_PROJETOS_DE_CODIGO",
       projects_heading: 'PROJETOS EM DESTAQUE',
       projects_sub: 'Trabalhos estruturados com código semântico e prototipagem no Figma.',
       filter_all: '[ ALL_PROJECTS ]',
@@ -80,11 +80,11 @@ const translations = {
       proj3_desc: 'Dashboard interativo desenvolvido em Vanilla JavaScript com suporte a filtros instantâneos, manipulação de dados e tema adaptativo.',
       proj3_app: '[► EXECUTAR APP]',
       proj3_code: '[➔ CÓDIGO FONTE]',
-      term_tag: '// 04_INTERACTIVE_CONSOLE',
+      term_tag: "// 05_CONSOLE_INTERATIVO",
       term_heading: 'TERMINAL CLI INTERATIVO',
       term_sub: "Experimente digitar comandos: 'help', 'about', 'skills', 'projects', 'contact', 'clear'.",
       term_welcome: "Bem-vindo(a) ao Terminal Interativo ASCII!\nDigite 'help' para visualizar os comandos disponíveis.",
-      contact_tag: '// 05_SEND_MESSAGE',
+      contact_tag: "// 06_ENVIAR_MENSAGEM",
       contact_heading: 'VAMOS CONVERSAR?',
       contact_sub: 'Disponível para freelas, novos projetos e oportunidades profissionais.',
       contact_info_title: '+--[ INFORMAÇÕES DE CONTATO ]----------------------------------------------------+',
@@ -107,6 +107,94 @@ const translations = {
       footer_text1: '[ ASCII_PORTFOLIO ] // DESENVOLVIDO COM JUNÇÃO DE CARACTERES PURA',
       footer_text2: '© ' + new Date().getFullYear() + ' Érica Paixão. Design minimalista & Clean Code.',
       footer_btn_top: '[ ^ RETORNAR AO TOPO ]'
+    ,
+      nav_trajectory: "[02] Trajetória"
+    ,
+      nav_cv_btn: "[ CURRÍCULO ]"
+    ,
+      hero_btn_cv: "[⇩ BAIXAR CV (PDF)]"
+    ,
+      hero_btn_trajectory: "[≡ TRAJETÓRIA]"
+    ,
+      traj_tag: "// 02_TRAJETORIA_E_ACADEMICA"
+    ,
+      traj_heading: "EXPERIÊNCIA, FORMAÇÃO & IDIOMAS"
+    ,
+      traj_sub: "Vivência prática em TI, formação acadêmica em andamento e proficiência em idiomas."
+    ,
+      traj_card1_title: "+--[ VIVÊNCIA PROFISSIONAL ]----------+"
+    ,
+      traj_card1_date: "[ Abr/2025 - Jun/2026 ]"
+    ,
+      traj_card1_role: "> Jovem Aprendiz em Dév de Software"
+    ,
+      traj_card1_desc: "Desenvolvimento de software em soluções financeiras: atuação em Linux/Bash para automação de processos, resolução de fluxos de cartões com Python e prevenção de duplicidade em regras de negócio."
+    ,
+      traj_card1_b1: "• Backend e regras financeiras com <strong>Java & Python</strong>"
+    ,
+      traj_card1_b2: "• Automação em ambiente <strong>Linux com Bash Shell & Git</strong>"
+    ,
+      traj_card1_b3: "• Resolução de bugs de Clearing e relatórios em <strong>SQL</strong>"
+    ,
+      traj_card1_status: "Disponível p/ Estágio / Jr"
+    ,
+      traj_card2_title: "+--[ FORMAÇÃO ACADÊMICA ]-------------+"
+    ,
+      traj_card2_date: "[ Previsão: 2027 ]"
+    ,
+      traj_card2_role: "> Análise e Desenv. de Sistemas"
+    ,
+      traj_card2_desc: "Graduação Tecnológica em ADS na <strong>UNIFACS</strong> (penúltimo semestre) e base técnica sólida com <strong>Ensino Médio e Técnico em Informática pelo SESI / SENAI Dendezeiros</strong>."
+    ,
+      traj_card2_b1: "• ADS - UNIFACS (Em andamento)"
+    ,
+      traj_card2_b2: "• Técnico em Informática - SESI / SENAI"
+    ,
+      traj_card2_b3: "• Engenharia de Software, Cloud & Dados"
+    ,
+      traj_card2_degree: "Tecnólogo em Andamento"
+    ,
+      traj_card3_title: "+--[ PROFICIÊNCIA EM IDIOMAS ]--------+"
+    ,
+      traj_card3_role: "> Níveis Reais de Comunicação"
+    ,
+      lang_en_name: "INGLÊS:"
+    ,
+      lang_en_level: "[ Intermediário B1/B2 ]"
+    ,
+      lang_en_desc: "Leitura técnica fluida para documentações de API, escrita corporativa e comunicação profissional."
+    ,
+      lang_pt_name: "PORTUGUÊS:"
+    ,
+      lang_pt_level: "[ Nativo ]"
+    ,
+      lang_pt_desc: "Comunicação verbal e escrita impecável para documentação e alinhamentos de equipe."
+    ,
+      lang_toeic_status: "Pontuação Homologada"
+    ,
+      cat_front_title: "+--[ FRONTEND & UI ]--------------------------------------------+"
+    ,
+      cat_front_lead: "> [ INTERFACES & WEB ]"
+    ,
+      cat_back_title: "+--[ BACKEND & APIS ]-------------------------------------------+"
+    ,
+      cat_back_lead: "> [ REGRAS & SERVIÇOS ]"
+    ,
+      cat_data_title: "+--[ BANCOS DE DADOS ]------------------------------------------+"
+    ,
+      cat_data_lead: "> [ DADOS & QUERIES ]"
+    ,
+      cat_devops_title: "+--[ DEVOPS, INFRA & TOOLS ]-----------------------------------+"
+    ,
+      cat_devops_lead: "> [ INFRA & AUTOMAÇÃO ]"
+    ,
+      cat_ui_title: "+--[ UI/UX DESIGN & PROTOTIPAGEM ]------------------------------------------------------------------------------------------------------------+"
+    ,
+      cat_ui_lead: "> [ DESIGN & PROTÓTIPO ]"
+    ,
+      traj_btn_cv: "[ ⇩ BAIXAR CURRÍCULO COMPLETO (PDF) ]"
+    ,
+      contact_btn_cv: "[ ⇩ BAIXAR CURRÍCULO (PDF) ]"
     },
     en: {
       lang_btn: '[ EN ]',
@@ -126,26 +214,26 @@ const translations = {
       hero_btn_projects: '[► VIEW PROJECTS]',
       hero_btn_terminal: '[⚙ OPEN TERMINAL]',
       hero_btn_contact: '[✉ SEND MESSAGE]',
-      stat_exp_val: '+1 YEAR',
-      stat_exp_desc: '/* Experience */',
-      stat_proj_val: '+5 PROJ',
-      stat_proj_desc: '/* Done */',
-      stat_craft_val: 'FULLSTACK',
-      stat_craft_desc: '/* APIs & Interface */',
-      about_tag: '// 01_ABOUT_ME',
-      about_heading: 'PHILOSOPHY & APPROACH',
-      about_sub: 'Building complete end-to-end applications: from data models to refined interface details.',
-      about_card1_title: '+--[ UI/UX & PROTOTYPING ]------------+',
-      about_card1_ascii: '.---.  [ DESIGN SYSTEMS & FIGMA ]\n|[_]|  Rigorous componentization,\n|:::|  intuitive user flows &\n\'---\'  clean dev-ready prototypes.',
-      about_card1_text: 'User-centered visual design structured with Auto Layout, variables and scalable Figma design component libraries.',
-      about_card2_title: '+--[ BACKEND & DATA ]-----------------+',
-      about_card2_ascii: '+-+    [ ARCHITECTURE & APIS ]\n| |+-+ Robust business logic,\n+-+| | REST APIs and relational\n  +-\'  database data modeling.',
-      about_card2_text: 'Relational data modeling and management with optimized queries, ensuring transactional integrity, security and robust business rules.',
-      about_card3_title: '+--[ FRONTEND & INTEGRATION ]---------+',
-      about_card3_ascii: '| | |  [ EFFICIENT INTERFACES ]\n[===]  Smooth API integration,\n \\=/   semantic clean code and\n  !    focus on high performance.',
-      about_card3_text: 'Modern component-driven development, asynchronous backend communication and responsive interfaces with high performance.',
-      skills_tag: '// 02_SKILLS_AND_STACK',
-      skills_heading: 'TECHNICAL SKILLS',
+      stat_exp_val: "+1 YEAR",
+      stat_exp_desc: "/* Experience */",
+      stat_proj_val: "+5 PROJ",
+      stat_proj_desc: "/* Delivered */",
+      stat_craft_val: "FULLSTACK",
+      stat_craft_desc: "/* APIs & Interface */",
+      about_tag: "// 01_ABOUT_ME",
+            about_heading: "WHO I AM",
+      about_sub: "Fullstack Developer & UI Designer focused on efficient solutions, clean code, and practical problem-solving.",
+      about_card1_title: "+--[ PROFILE & IDENTITY ]-------------+",
+      about_card1_ascii: ".---.  [ FULLSTACK & UI DESIGN ]\n|[_]|  Direct connection between\n|:::|  solid backend architecture\n'---'  and intuitive UI design.",
+      about_card1_text: "Software Engineering / ADS student at UNIFACS with background in IT support and dev. I build end-to-end systems considering both data architecture and end-user ergonomics.",
+      about_card2_title: "+--[ PROBLEM SOLVING ]----------------+",
+      about_card2_ascii: "+-+    [ PRAGMATISM & CLEAN CODE ]\n| |+-+ Workflow automations,\n+-+| | optimized SQL queries\n  +-+' and reliable maintenance.",
+      about_card2_text: "Hands-on experience with Java, C#, Python, SQL and Git at WEX/ISBET: rapid issue diagnosis, routine task automation and delivering software without unnecessary bloat.",
+      about_card3_title: "+--[ STRENGTHS & GOAL ]---------------+",
+      about_card3_ascii: "| | |  [ READY TO DELIVER ]\n[===]  TOEIC certified English,\n \\=/   fast Figma prototyping\n  !    and immediate availability.",
+      about_card3_text: "Seeking opportunities as an Intern or Junior Software Developer. Combining clear communication, fluent technical English reading and fast continuous learning.",
+      skills_tag: "// 03_TECH_STACK",
+      skills_heading: "TECHNICAL SKILLS & STACK",
       skills_sub: 'Skills and tools applied to end-to-end software development, from UI design to databases.',
       skill_label_1: '> FRONTEND / JS, REACT, VUE, JQUERY, HTML5/CSS3/SVG',
       skill_bar_1: '[██████████████████░░] [ PROFICIENT ]',
@@ -160,7 +248,7 @@ const translations = {
       skill_label_6: '> UI/UX DESIGN / FIGMA, DESIGN SYSTEMS & SVG',
       skill_bar_6: '[███████████████████░] [ ADVANCED ]',
       chip_css: '[ #MODERN_CSS ]',
-      projects_tag: '// 03_FEATURED_PROJECTS',
+      projects_tag: "// 04_CODE_PROJECTS",
       projects_heading: 'FEATURED PROJECTS',
       projects_sub: 'Works built with semantic code and polished Figma prototypes.',
       filter_all: '[ ALL_PROJECTS ]',
@@ -189,11 +277,11 @@ const translations = {
       proj3_desc: 'Interactive dashboard built with Vanilla JavaScript featuring instant filtering, live metrics and theme engine.',
       proj3_app: '[► LAUNCH APP]',
       proj3_code: '[➔ SOURCE CODE]',
-      term_tag: '// 04_INTERACTIVE_CONSOLE',
+      term_tag: "// 05_INTERACTIVE_CONSOLE",
       term_heading: 'INTERACTIVE CLI TERMINAL',
       term_sub: "Try typing commands: 'help', 'about', 'skills', 'projects', 'contact', 'clear'.",
       term_welcome: "Welcome to the ASCII Interactive Terminal!\nType 'help' to see available commands.",
-      contact_tag: '// 05_SEND_MESSAGE',
+      contact_tag: "// 06_SEND_MESSAGE",
       contact_heading: "LET'S WORK TOGETHER?",
       contact_sub: 'Available for freelance opportunities, new projects and collaborations.',
       contact_info_title: '+--[ CONTACT INFORMATION ]-------------------------------------------------------+',
@@ -216,6 +304,94 @@ const translations = {
       footer_text1: '[ ASCII_PORTFOLIO ] // CRAFTED WITH PURE MONOSPACE CHARACTERS',
       footer_text2: '© ' + new Date().getFullYear() + ' Érica Paixão. Minimalist design & Clean Code.',
       footer_btn_top: '[ ^ BACK TO TOP ]'
+    ,
+      nav_trajectory: "[02] Trajectory"
+    ,
+      nav_cv_btn: "[ RESUME ]"
+    ,
+      hero_btn_cv: "[⇩ DOWNLOAD CV (PDF)]"
+    ,
+      hero_btn_trajectory: "[≡ TRAJECTORY]"
+    ,
+      traj_tag: "// 02_TRAJECTORY_AND_ACADEMICS"
+    ,
+      traj_heading: "EXPERIENCE, EDUCATION & LANGUAGES"
+    ,
+      traj_sub: "Hands-on IT experience, ongoing higher education, and real language proficiency."
+    ,
+      traj_card1_title: "+--[ WORK EXPERIENCE ]----------------+"
+    ,
+      traj_card1_date: "[ Apr/2025 - Jun/2026 ]"
+    ,
+      traj_card1_role: "> Software Dev Apprentice (WEX)"
+    ,
+      traj_card1_desc: "Software development for financial solutions: Linux/Bash scripting for system automation, card processing flows in Python, and backend business logic validation."
+    ,
+      traj_card1_b1: "• Backend and financial business rules with <strong>Java & Python</strong>"
+    ,
+      traj_card1_b2: "• Process automation in <strong>Linux with Bash Shell & Git</strong>"
+    ,
+      traj_card1_b3: "• Clearing bug fixing and transactional reporting with <strong>SQL</strong>"
+    ,
+      traj_card1_status: "Available for Intern / Jr"
+    ,
+      traj_card2_title: "+--[ HIGHER EDUCATION ]---------------+"
+    ,
+      traj_card2_date: "[ Expected: 2027 ]"
+    ,
+      traj_card2_role: "> Systems Analysis & Development"
+    ,
+      traj_card2_desc: "Associate Degree in ADS at <strong>UNIFACS</strong> (penultimate semester) and technical foundation with <strong>High School & Vocational IT Diploma from SESI / SENAI</strong>."
+    ,
+      traj_card2_b1: "• ADS - UNIFACS (Undergraduate)"
+    ,
+      traj_card2_b2: "• IT Technician - SESI / SENAI"
+    ,
+      traj_card2_b3: "• Software Engineering, Cloud & Databases"
+    ,
+      traj_card2_degree: "Degree in Progress"
+    ,
+      traj_card3_title: "+--[ LANGUAGE PROFICIENCY ]-----------+"
+    ,
+      traj_card3_role: "> Real Communication Levels"
+    ,
+      lang_en_name: "ENGLISH:"
+    ,
+      lang_en_level: "[ Intermediate B1/B2 ]"
+    ,
+      lang_en_desc: "Fluent technical reading of API documentation, business writing and professional communication."
+    ,
+      lang_pt_name: "PORTUGUESE:"
+    ,
+      lang_pt_level: "[ Native ]"
+    ,
+      lang_pt_desc: "Fluent written and verbal communication for documentation and teamwork."
+    ,
+      lang_toeic_status: "Official TOEIC Score"
+    ,
+      cat_front_title: "+--[ FRONTEND & UI ]--------------------------------------------+"
+    ,
+      cat_front_lead: "> [ INTERFACES & WEB ]"
+    ,
+      cat_back_title: "+--[ BACKEND & APIS ]-------------------------------------------+"
+    ,
+      cat_back_lead: "> [ LOGIC & SERVICES ]"
+    ,
+      cat_data_title: "+--[ DATABASES ]------------------------------------------------+"
+    ,
+      cat_data_lead: "> [ DATA & QUERIES ]"
+    ,
+      cat_devops_title: "+--[ DEVOPS, INFRA & TOOLS ]------------------------------------+"
+    ,
+      cat_devops_lead: "> [ INFRA & AUTOMATION ]"
+    ,
+      cat_ui_title: "+--[ UI/UX DESIGN & PROTOTYPING ]------------------------------------------------------------------------------------------------------------+"
+    ,
+      cat_ui_lead: "> [ DESIGN & PROTOTYPE ]"
+    ,
+      traj_btn_cv: "[ ⇩ DOWNLOAD FULL RESUME (PDF) ]"
+    ,
+      contact_btn_cv: "[ ⇩ DOWNLOAD RESUME (PDF) ]"
     },
     es: {
       lang_btn: '[ ES ]',
@@ -235,26 +411,26 @@ const translations = {
       hero_btn_projects: '[► VER PROYECTOS]',
       hero_btn_terminal: '[⚙ ABRIR TERMINAL]',
       hero_btn_contact: '[✉ ENVIAR MENSAJE]',
-      stat_exp_val: '+1 AÑO',
-      stat_exp_desc: '/* Experiencia */',
-      stat_proj_val: '+5 PROY',
-      stat_proj_desc: '/* Hechos */',
-      stat_craft_val: 'FULLSTACK',
-      stat_craft_desc: '/* APIs & Interfaz */',
-      about_tag: '// 01_SOBRE_MI',
-      about_heading: 'FILOSOFÍA Y ENFOQUE',
-      about_sub: 'Construcción de aplicaciones completas: desde el modelo de datos hasta el detalle visual de la interfaz.',
-      about_card1_title: '+--[ UI/UX Y PROTOTIPADO ]------------+',
-      about_card1_ascii: '.---.  [ DESIGN SYSTEMS Y FIGMA ]\n|[_]|  Componentización rigurosa,\n|:::|  flujos intuitivos y alta\n\'---\'  fidelidad listos para dev.',
-      about_card1_text: 'Diseño visual centrado en el usuario, estructurado con Auto Layout, variables y bibliotecas de componentes escalables en Figma.',
-      about_card2_title: '+--[ BACKEND Y DATOS ]----------------+',
-      about_card2_ascii: '+-+    [ ARQUITECTURA Y APIS ]\n| |+-+ Lógica de negocio robusta,\n+-+| | APIs REST y modelado de\n  +-\'  bases de datos relacionales.',
-      about_card2_text: 'Modelado y gestión de datos relacionales con consultas eficientes, garantizando integridad transaccional, seguridad y escalabilidad.',
-      about_card3_title: '+--[ FRONTEND E INTEGRACIÓN ]---------+',
-      about_card3_ascii: '| | |  [ INTERFACES EFICIENTES ]\n[===]  Integración fluida con APIs,\n \\=/   código semántico y limpio\n  !    con alto rendimiento.',
-      about_card3_text: 'Implementación moderna basada en componentes, comunicación asíncrona con el backend e interfaces responsivas de alto rendimiento.',
-      skills_tag: '// 02_HABILIDADES_Y_STACK',
-      skills_heading: 'HABILIDADES TÉCNICAS',
+      stat_exp_val: "+1 AÑO",
+      stat_exp_desc: "/* Experiencia */",
+      stat_proj_val: "+5 PROY",
+      stat_proj_desc: "/* Listos */",
+      stat_craft_val: "FULLSTACK",
+      stat_craft_desc: "/* APIs e Interfaz */",
+      about_tag: "// 01_SOBRE_MI",
+            about_heading: "QUIÉN SOY",
+      about_sub: "Desarrolladora Fullstack y Diseñadora UI enfocada en soluciones eficientes, código limpio y resolución práctica.",
+      about_card1_title: "+--[ PERFIL E IDENTIDAD ]-------------+",
+      about_card1_ascii: ".---.  [ FULLSTACK Y DISEÑO UI ]\n|[_]|  Conexión directa entre\n|:::|  arquitectura sólida e\n'---'  interfaces intuitivas.",
+      about_card1_text: "Estudiante de Análisis y Desarrollo de Sistemas en UNIFACS con experiencia en soporte TI e desenvolvimento. Creo sistemas completos cuidando tanto los datos como la experiencia del usuario.",
+      about_card2_title: "+--[ RESOLUCIÓN DE PROBLEMAS ]--------+",
+      about_card2_ascii: "+-+    [ PRAGMATISMO Y CÓDIGO ]\n| |+-+ Automatización de tareas,\n+-+| | consultas SQL optimizadas\n  +-+' y foco en mantenimiento.",
+      about_card2_text: "Experiencia práctica con Java, C#, Python, SQL y Git en WEX/ISBET: diagnóstico ágil de incidencias, automatización de rutinas repetitivas y desarrollo sin complejidad innecesaria.",
+      about_card3_title: "+--[ DIFERENCIAL Y META ]-------------+",
+      about_card3_ascii: "| | |  [ LISTA PARA SUMAR ]\n[===]  Inglés certificado (TOEIC),\n \\=/   prototipado ágil en Figma\n  !    y disponibilidad inmediata.",
+      about_card3_text: "En búsqueda de oportunidades como Pasante o Desarrolladora Junior. Combino comunicación clara, lectura técnica en inglés y rápida capacidad de aprendizaje continuo.",
+      skills_tag: "// 03_STACK_TECNOLOGICA",
+      skills_heading: "HABILIDADES & STACK TÉCNICA",
       skills_sub: 'Competencias y herramientas aplicadas a la concepción de sistemas completos, del diseño a la base de datos.',
       skill_label_1: '> FRONTEND / JS, REACT, VUE, JQUERY, HTML5/CSS3/SVG',
       skill_bar_1: '[██████████████████░░] [ PROFICIENTE ]',
@@ -269,7 +445,7 @@ const translations = {
       skill_label_6: '> DISEÑO UI/UX / FIGMA, DESIGN SYSTEMS Y SVG',
       skill_bar_6: '[███████████████████░] [ AVANZADO ]',
       chip_css: '[ #CSS_MODERNO ]',
-      projects_tag: '// 03_PROYECTOS_DESTACADOS',
+      projects_tag: "// 04_PROYECTOS_DE_CODIGO",
       projects_heading: 'PROYECTOS DESTACADOS',
       projects_sub: 'Trabajos estructurados con código semántico y prototipado en Figma.',
       filter_all: '[ TODOS_PROYECTOS ]',
@@ -298,11 +474,11 @@ const translations = {
       proj3_desc: 'Dashboard interactivo desarrollado en JavaScript puro con filtros en tiempo real y tema adaptable.',
       proj3_app: '[► EJECUTAR APP]',
       proj3_code: '[➔ CÓDIGO FUENTE]',
-      term_tag: '// 04_CONSOLA_INTERACTIVA',
+      term_tag: "// 05_CONSOLA_INTERACTIVA",
       term_heading: 'TERMINAL CLI INTERACTIVA',
       term_sub: "Escribe comandos: 'help', 'about', 'skills', 'projects', 'contact', 'clear'.",
       term_welcome: "¡Bienvenido(a) a la Terminal Interactiva ASCII!\nEscribe 'help' para ver los comandos disponibles.",
-      contact_tag: '// 05_ENVIAR_MENSAJE',
+      contact_tag: "// 06_ENVIAR_MENSAJE",
       contact_heading: '¿HABLAMOS?',
       contact_sub: 'Disponible para proyectos freelance y nuevas oportunidades.',
       contact_info_title: '+--[ INFORMACIÓN DE CONTACTO ]----------------------------------------------------+',
@@ -325,6 +501,94 @@ const translations = {
       footer_text1: '[ PORTAFOLIO_ASCII ] // DESARROLLADO CON CARACTERES ASCII PUROS',
       footer_text2: '© ' + new Date().getFullYear() + ' Érica Paixão. Diseño minimalista y Clean Code.',
       footer_btn_top: '[ ^ VOLVER ARRIBA ]'
+    ,
+      nav_trajectory: "[02] Trayectoria"
+    ,
+      nav_cv_btn: "[ CURRÍCULUM ]"
+    ,
+      hero_btn_cv: "[⇩ DESCARGAR CV (PDF)]"
+    ,
+      hero_btn_trajectory: "[≡ TRAYECTORIA]"
+    ,
+      traj_tag: "// 02_TRAYECTORIA_Y_ACADEMICA"
+    ,
+      traj_heading: "EXPERIENCIA, FORMACIÓN E IDIOMAS"
+    ,
+      traj_sub: "Experiencia práctica en TI, formación universitaria en curso y niveles de idioma."
+    ,
+      traj_card1_title: "+--[ EXPERIENCIA PROFESIONAL ]-------+"
+    ,
+      traj_card1_date: "[ Abr/2025 - Jun/2026 ]"
+    ,
+      traj_card1_role: "> Joven Aprendiz en Desarr. de Software"
+    ,
+      traj_card1_desc: "Desarrollo de software en soluciones financieras: entorno Linux/Bash para automatización, flujos de procesamiento de tarjetas en Python y validación de reglas de negocio."
+    ,
+      traj_card1_b1: "• Backend y reglas financieras con <strong>Java y Python</strong>"
+    ,
+      traj_card1_b2: "• Automatización en entorno <strong>Linux con Bash Shell y Git</strong>"
+    ,
+      traj_card1_b3: "• Corrección de bugs de Clearing e informes en <strong>SQL</strong>"
+    ,
+      traj_card1_status: "Disponible para Pasantía / Jr"
+    ,
+      traj_card2_title: "+--[ FORMACIÓN ACADÉMICA ]-----------+"
+    ,
+      traj_card2_date: "[ Previsto: 2027 ]"
+    ,
+      traj_card2_role: "> Análisis y Desarr. de Sistemas"
+    ,
+      traj_card2_desc: "Carrera de ADS en <strong>UNIFACS</strong> (penúltimo semestre) y sólida formación técnica con <strong>Educación Media y Técnico en Informática por SESI / SENAI</strong>."
+    ,
+      traj_card2_b1: "• ADS - UNIFACS (En curso)"
+    ,
+      traj_card2_b2: "• Técnico en Informática - SESI / SENAI"
+    ,
+      traj_card2_b3: "• Ingeniería de Software, Cloud y Datos"
+    ,
+      traj_card2_degree: "Carrera en Curso"
+    ,
+      traj_card3_title: "+--[ PROFICIENCIA EN IDIOMAS ]-------+"
+    ,
+      traj_card3_role: "> Niveles Reales de Comunicación"
+    ,
+      lang_en_name: "INGLÉS:"
+    ,
+      lang_en_level: "[ Intermedio B1/B2 ]"
+    ,
+      lang_en_desc: "Lectura técnica fluida de documentación de APIs, redacción y comunicación corporativa."
+    ,
+      lang_pt_name: "PORTUGUÉS:"
+    ,
+      lang_pt_level: "[ Nativo ]"
+    ,
+      lang_pt_desc: "Excelente comunicación oral y escrita para documentación y alineación de equipos."
+    ,
+      lang_toeic_status: "Certificación TOEIC"
+    ,
+      cat_front_title: "+--[ FRONTEND Y UI ]--------------------------------------------+"
+    ,
+      cat_front_lead: "> [ INTERFACES Y WEB ]"
+    ,
+      cat_back_title: "+--[ BACKEND Y APIS ]-------------------------------------------+"
+    ,
+      cat_back_lead: "> [ REGLAS Y SERVICIOS ]"
+    ,
+      cat_data_title: "+--[ BASES DE DATOS ]-------------------------------------------+"
+    ,
+      cat_data_lead: "> [ DATOS Y CONSULTAS ]"
+    ,
+      cat_devops_title: "+--[ DEVOPS, INFRA Y TOOLS ]------------------------------------+"
+    ,
+      cat_devops_lead: "> [ INFRA Y AUTOMATIZACIÓN ]"
+    ,
+      cat_ui_title: "+--[ DISEÑO UI/UX Y PROTOTIPADO ]------------------------------------------------------------------------------------------------------------+"
+    ,
+      cat_ui_lead: "> [ DISEÑO Y PROTOTIPOS ]"
+    ,
+      traj_btn_cv: "[ ⇩ DESCARGAR CURRÍCULUM COMPLETO (PDF) ]"
+    ,
+      contact_btn_cv: "[ ⇩ DESCARGAR CURRÍCULUM (PDF) ]"
     },
     fr: {
       lang_btn: '[ FR ]',
@@ -344,26 +608,26 @@ const translations = {
       hero_btn_projects: '[► VOIR PROJETS]',
       hero_btn_terminal: '[⚙ OUVRIR TERMINAL]',
       hero_btn_contact: '[✉ ENVOYER MESSAGE]',
-      stat_exp_val: '+1 AN',
-      stat_exp_desc: '/* Expérience */',
-      stat_proj_val: '+5 PROJ',
-      stat_proj_desc: '/* Livrés */',
-      stat_craft_val: 'FULLSTACK',
-      stat_craft_desc: '/* APIs & Interface */',
-      about_tag: '// 01_A_PROPOS',
-      about_heading: 'PHILOSOPHIE & APPROCHE',
-      about_sub: "Conception d'applications complètes : du modèle de données aux détails visuels de l'interface.",
-      about_card1_title: '+--[ UI/UX & PROTOTYPAGE ]------------+',
-      about_card1_ascii: '.---.  [ DESIGN SYSTEMS & FIGMA ]\n|[_]|  Composants modulaires,\n|:::|  flux intuitifs et haute\n\'---\'  fidélité prêts pour dev.',
-      about_card1_text: 'Design visuel centré utilisateur, structuré avec Auto Layout, variables et bibliothèques de composants Figma évolutives.',
-      about_card2_title: '+--[ BACKEND & DONNÉES ]--------------+',
-      about_card2_ascii: '+-+    [ ARCHITECTURE & APIS ]\n| |+-+ Logique métier robuste,\n+-+| | APIs REST et modélisation\n  +-\'  de bases de données.',
-      about_card2_text: 'Modélisation et gestion de bases relationnelles avec requêtes optimisées, garantissant intégrité transactionnelle, sécurité et logique métier solide.',
-      about_card3_title: '+--[ FRONTEND & INTÉGRATION ]---------+',
-      about_card3_ascii: '| | |  [ INTERFACES EFFICACES ]\n[===]  Intégration d\'API fluide,\n \\=/   code sémantique et propre\n  !    axé sur la performance.',
-      about_card3_text: 'Développement moderne orienté composants, communication asynchrone avec le backend et interfaces réactives haute performance.',
-      skills_tag: '// 02_COMPETENCES_ET_STACK',
-      skills_heading: 'COMPÉTENCES TECHNIQUES',
+      stat_exp_val: "+1 AN",
+      stat_exp_desc: "/* Expérience */",
+      stat_proj_val: "+5 PROJ",
+      stat_proj_desc: "/* Livrés */",
+      stat_craft_val: "FULLSTACK",
+      stat_craft_desc: "/* APIs & Interface */",
+      about_tag: "// 01_A_PROPOS",
+            about_heading: "QUI JE SUIS",
+      about_sub: "Développeuse Fullstack & Designer UI axée sur des solutions efficaces, un code propre et une autonomie pratique.",
+      about_card1_title: "+--[ PROFIL & IDENTITÉ ]--------------+",
+      about_card1_ascii: ".---.  [ FULLSTACK & DESIGN UI ]\n|[_]|  Lien direct entre\n|:::|  architecture robuste et\n'---'  interfaces intuitives.",
+      about_card1_text: "Étudiante en informatique (ADS) à l'UNIFACS avec expérience en support IT et développement. Je conçois des systèmes complets en soignant tant la base de données que l'ergonomie.",
+      about_card2_title: "+--[ RÉSOLUTION DE PROBLÈMES ]--------+",
+      about_card2_ascii: "+-+    [ PRAGMATISME & CODE PROPRE ]\n| |+-+ Automatisation de routines,\n+-+| | requêtes SQL optimisées\n  +-+' et maintenabilité.",
+      about_card2_text: "Expérience concrète avec Java, C#, Python, SQL et Git chez WEX/ISBET : diagnostic rapide des incidents, automatisation de tâches répétitives et livraison de code fiable.",
+      about_card3_title: "+--[ ATOUTS & OBJECTIF ]--------------+",
+      about_card3_ascii: "| | |  [ PRÊTE À CONTRIBUER ]\n[===]  Anglais certifié (TOEIC),\n \\=/   prototypage Figma rapide\n  !    et disponibilité immédiate.",
+      about_card3_text: "À la recherche d'opportunités de stage ou de poste Junior. Alliant communication claire, lecture technique fluide en anglais et grande adaptabilité continue.",
+      skills_tag: "// 03_STACK_TECHNIQUE",
+      skills_heading: "COMPÉTENCES & STACK TECHNIQUE",
       skills_sub: 'Compétences et outils appliqués à la conception de sistemas complets, du design à la base de données.',
       skill_label_1: '> FRONTEND / JS, REACT, VUE, JQUERY, HTML5/CSS3/SVG',
       skill_bar_1: '[██████████████████░░] [ COMPÉTENT ]',
@@ -378,7 +642,7 @@ const translations = {
       skill_label_6: '> UI/UX DESIGN / FIGMA, DESIGN SYSTEMS & SVG',
       skill_bar_6: '[███████████████████░] [ AVANCÉ ]',
       chip_css: '[ #CSS_MODERNE ]',
-      projects_tag: '// 03_PROJETS_EN_VEDETTE',
+      projects_tag: "// 04_PROJETS_DE_CODE",
       projects_heading: 'PROJETS EN VEDETTE',
       projects_sub: 'Réalisations structurées avec code sémantique et prototypes Figma.',
       filter_all: '[ TOUS_PROJETS ]',
@@ -407,11 +671,11 @@ const translations = {
       proj3_desc: 'Dashboard interactif développé en JavaScript pur avec filtres en temps réel et thème adaptatif.',
       proj3_app: '[► LANCER APP]',
       proj3_code: '[➔ CODE SOURCE]',
-      term_tag: '// 04_CONSOLE_INTERACTIVE',
+      term_tag: "// 05_CONSOLE_INTERACTIVE",
       term_heading: 'TERMINAL CLI INTERACTIF',
       term_sub: "Tapez des commandes: 'help', 'about', 'skills', 'projects', 'contact', 'clear'.",
       term_welcome: "Bienvenue sur le Terminal Interactif ASCII!\nTapez 'help' pour afficher les commandes.",
-      contact_tag: '// 05_ENVOYER_MESSAGE',
+      contact_tag: "// 06_ENVOYER_MESSAGE",
       contact_heading: 'PARLONS DE VOTRE PROJET',
       contact_sub: 'Disponible pour missions freelance et nouvelles opportunités professionnelles.',
       contact_info_title: '+--[ INFORMATIONS DE CONTACT ]----------------------------------------------------+',
@@ -435,7 +699,95 @@ const translations = {
       footer_text2: '© ' + new Date().getFullYear() + ' Érica Paixão. Design minimaliste & Clean Code.',
       footer_btn_top: '[ ^ RETOUR EN HAUT ]'
     }
-  };
+  ,
+      nav_trajectory: "[02] Parcours"
+    ,
+      nav_cv_btn: "[ CV ]"
+    ,
+      hero_btn_cv: "[⇩ TÉLÉCHARGER CV (PDF)]"
+    ,
+      hero_btn_trajectory: "[≡ PARCOURS]"
+    ,
+      traj_tag: "// 02_PARCOURS_ET_ACADEMIQUE"
+    ,
+      traj_heading: "EXPÉRIENCE, FORMATION & LANGUES"
+    ,
+      traj_sub: "Expérience pratique en TI, formation en cours et compétences linguistiques."
+    ,
+      traj_card1_title: "+--[ EXPÉRIENCE PROFESSIONNELLE ]----+"
+    ,
+      traj_card1_date: "[ Avr/2025 - Juin/2026 ]"
+    ,
+      traj_card1_role: "> Apprentie Dév Logiciel (WEX)"
+    ,
+      traj_card1_desc: "Développement logiciel pour solutions financières : environnement Linux/Bash pour l'automatisation, traitement des flux cartes en Python et prévention des doublons."
+    ,
+      traj_card1_b1: "• Backend et règles financières avec <strong>Java & Python</strong>"
+    ,
+      traj_card1_b2: "• Automatisation d'environnement <strong>Linux avec Bash & Git</strong>"
+    ,
+      traj_card1_b3: "• Résolution de bugs Clearing et rapports <strong>SQL</strong>"
+    ,
+      traj_card1_status: "Disponible pour Stage / Jr"
+    ,
+      traj_card2_title: "+--[ FORMATION ACADÉMIQUE ]----------+"
+    ,
+      traj_card2_date: "[ Prévu: 2027 ]"
+    ,
+      traj_card2_role: "> Analyse et Dév. de Systèmes"
+    ,
+      traj_card2_desc: "Diplôme ADS à l'<strong>UNIFACS</strong> (avant-dernier semestre) et base technique avec <strong>Bac & Diplôme Technologique Informatique SESI / SENAI</strong>."
+    ,
+      traj_card2_b1: "• ADS - UNIFACS (En cours)"
+    ,
+      traj_card2_b2: "• Technicienne Informatique - SESI / SENAI"
+    ,
+      traj_card2_b3: "• Ingénierie Logicielle, Cloud & Données"
+    ,
+      traj_card2_degree: "Formation en Cours"
+    ,
+      traj_card3_title: "+--[ COMPÉTENCES LINGUISTIQUES ]------+"
+    ,
+      traj_card3_role: "> Niveaux Réels de Communication"
+    ,
+      lang_en_name: "ANGLAIS:"
+    ,
+      lang_en_level: "[ Intermédiaire B1/B2 ]"
+    ,
+      lang_en_desc: "Lecture technique fluide de documentations d'API, rédaction et communication professionnelle."
+    ,
+      lang_pt_name: "PORTUGAIS:"
+    ,
+      lang_pt_level: "[ Natif ]"
+    ,
+      lang_pt_desc: "Excellente communication orale et écrite pour la documentation et le travail d'équipe."
+    ,
+      lang_toeic_status: "Certification TOEIC"
+    ,
+      cat_front_title: "+--[ FRONTEND & UI ]--------------------------------------------+"
+    ,
+      cat_front_lead: "> [ INTERFACES & WEB ]"
+    ,
+      cat_back_title: "+--[ BACKEND & APIS ]-------------------------------------------+"
+    ,
+      cat_back_lead: "> [ LOGIQUE & SERVICES ]"
+    ,
+      cat_data_title: "+--[ BASES DE DONNÉES ]-----------------------------------------+"
+    ,
+      cat_data_lead: "> [ DONNÉES & REQUÊTES ]"
+    ,
+      cat_devops_title: "+--[ DEVOPS, INFRA & OUTILS ]-----------------------------------+"
+    ,
+      cat_devops_lead: "> [ INFRA & AUTOMATISATION ]"
+    ,
+      cat_ui_title: "+--[ UI/UX DESIGN & PROTOTYPAGE ]------------------------------------------------------------------------------------------------------------+"
+    ,
+      cat_ui_lead: "> [ DESIGN & PROTOTYPE ]"
+    ,
+      traj_btn_cv: "[ ⇩ TÉLÉCHARGER LE CV COMPLET (PDF) ]"
+    ,
+      contact_btn_cv: "[ ⇩ TÉLÉCHARGER LE CV (PDF) ]"
+    };
 
   let currentLang = localStorage.getItem('portfolio_lang') || 'pt';
   window.translations = translations;
@@ -453,7 +805,7 @@ const translations = {
     // Atualiza todos os nós de texto com data-i18n
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
-      if (t[key]) el.textContent = t[key];
+      if (t[key] !== undefined) { if (typeof t[key] === 'string' && t[key].includes('<') && t[key].includes('>')) { el.innerHTML = t[key]; } else { el.textContent = t[key]; } }
     });
 
     // Atualiza placeholders dos inputs
