@@ -317,13 +317,6 @@
           <div class="box-bottom-bar">+-------------------------------------+</div>
         </div>
       </div>
-
-      <!-- Botão de Ação: Baixar Currículo após Trajetória -->
-      <div class="section-cta-wrap">
-        <a href="curriculo-erica-paixao.pdf" download="Currículo - Érica Paixão.pdf" class="ascii-btn ascii-btn-highlight btn-cv-large" data-i18n="traj_btn_cv" title="Baixar Currículo em PDF">
-          [ ⇩ BAIXAR CURRÍCULO COMPLETO (PDF) ]
-        </a>
-      </div>
     </div>
   </section>
 
@@ -355,7 +348,7 @@
               <span class="ascii-chip">[ VUE.JS ]</span>
               <span class="ascii-chip">[ JQUERY ]</span>
               <span class="ascii-chip">[ CANVAS 2D ]</span>
-              <span class="ascii-chip">[ RESPONSIVE DESIGN ]</span>
+              <span class="ascii-chip" data-i18n="chip_resp">[ RESPONSIVE DESIGN ]</span>
             </div>
           </div>
           <div class="box-bottom-bar">+---------------------------------------------------------------+</div>
@@ -389,9 +382,9 @@
               <span class="ascii-chip">[ POSTGRESQL ]</span>
               <span class="ascii-chip">[ MYSQL ]</span>
               <span class="ascii-chip">[ SQL ANSI ]</span>
-              <span class="ascii-chip">[ MODELAGEM RELACIONAL ]</span>
-              <span class="ascii-chip">[ CONSULTAS &amp; JOINS ]</span>
-              <span class="ascii-chip">[ INTEGRIDADE &amp; TRANSAÇÕES ]</span>
+              <span class="ascii-chip" data-i18n="chip_rel_model">[ MODELAGEM RELACIONAL ]</span>
+              <span class="ascii-chip" data-i18n="chip_queries_joins">[ CONSULTAS &amp; JOINS ]</span>
+              <span class="ascii-chip" data-i18n="chip_integrity_tx">[ INTEGRIDADE &amp; TRANSAÇÕES ]</span>
             </div>
           </div>
           <div class="box-bottom-bar">+---------------------------------------------------------------+</div>
@@ -408,8 +401,8 @@
               <span class="ascii-chip">[ DOCKER ]</span>
               <span class="ascii-chip">[ LINUX (UBUNTU/DEBIAN) ]</span>
               <span class="ascii-chip">[ BASH / SHELL ]</span>
-              <span class="ascii-chip">[ AUTOMAÇÃO DE SCRIPTS ]</span>
-              <span class="ascii-chip">[ SUPORTE DE TI / REDES ]</span>
+              <span class="ascii-chip" data-i18n="chip_script_auto">[ AUTOMAÇÃO DE SCRIPTS ]</span>
+              <span class="ascii-chip" data-i18n="chip_it_support">[ SUPORTE DE TI / REDES ]</span>
             </div>
           </div>
           <div class="box-bottom-bar">+---------------------------------------------------------------+</div>
@@ -422,11 +415,11 @@
             <span class="cat-lead" data-i18n="cat_ui_lead">&gt; [ DESIGN &amp; PROTÓTIPO ]</span>
             <div class="cat-tags">
               <span class="ascii-chip">[ FIGMA ]</span>
-              <span class="ascii-chip">[ DESIGN SYSTEMS ]</span>
-              <span class="ascii-chip">[ AUTO LAYOUT ]</span>
-              <span class="ascii-chip">[ VARIANTES &amp; COMPONENTES ]</span>
-              <span class="ascii-chip">[ WIREFRAMES &amp; FLUXOS ]</span>
-              <span class="ascii-chip">[ SVG ART &amp; ASCII ]</span>
+              <span class="ascii-chip" data-i18n="chip_ds">[ DESIGN SYSTEMS ]</span>
+              <span class="ascii-chip" data-i18n="chip_auto_layout">[ AUTO LAYOUT ]</span>
+              <span class="ascii-chip" data-i18n="chip_variants_comp">[ VARIANTES &amp; COMPONENTES ]</span>
+              <span class="ascii-chip" data-i18n="chip_wireframes">[ WIREFRAMES &amp; FLUXOS ]</span>
+              <span class="ascii-chip" data-i18n="chip_svg_art">[ SVG ART &amp; ASCII ]</span>
             </div>
           </div>
           <div class="box-bottom-bar">+---------------------------------------------------------------------------------------------------------------------------------------------+</div>
@@ -684,11 +677,6 @@ Digite 'help' para visualizar os comandos disponíveis.
             <button type="submit" class="ascii-btn ascii-btn-highlight btn-send" id="btn-submit" data-i18n="contact_btn_send">
               [ TRANSMITIR MENSAGEM &gt;&gt; ]
             </button>
-            <div class="contact-cv-wrap">
-              <a href="curriculo-erica-paixao.pdf" download="Currículo - Érica Paixão.pdf" class="ascii-btn ascii-btn-secondary contact-cv-btn" data-i18n="contact_btn_cv" title="Baixar Currículo em PDF">
-                [ ⇩ BAIXAR CURRÍCULO (PDF) ]
-              </a>
-            </div>
           </form>
           <div class="box-bottom-bar">+----------------------------------------------------------------------------------------------------+</div>
         </div>
@@ -697,10 +685,10 @@ Digite 'help' para visualizar os comandos disponíveis.
           <!-- Canais Diretos -->
           <div class="contact-links-row contact-direct-row">
             <a href="https://wa.me/5571987274921" target="_blank" rel="noopener noreferrer" class="ascii-chip chip-direct chip-highlight" title="Conversar no WhatsApp: +55 (71) 98727-4921">
-              [ <svg class="chip-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z"/></svg> WHATSAPP ]
+              <span class="chip-inner-underline">[ <svg class="chip-svg-icon" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z"/></svg> WHATSAPP ]</span>
             </a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=florserena.epg203@gmail.com" target="_blank" rel="noopener noreferrer" class="ascii-chip chip-direct" title="Enviar E-mail: florserena.epg203@gmail.com">
-              [ ✉ EMAIL ]
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=florserena.epg203@gmail.com" target="_blank" rel="noopener noreferrer" class="ascii-chip chip-direct chip-highlight" title="Enviar E-mail: florserena.epg203@gmail.com">
+              <span class="chip-inner-underline">[ <svg class="chip-svg-icon" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> EMAIL ]</span>
             </a>
           </div>
 
