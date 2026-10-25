@@ -1,4 +1,4 @@
-// Integração com a API do GitHub e gerenciamento de filtros de projetos
+// GitHub API & filtros de projetos
 const GITHUB_USERNAME = 'VaporubDev';
 let cachedGithubRepos = null;
 let currentProjectFilter = 'all';
@@ -23,7 +23,7 @@ window.cachedGithubRepos = cachedGithubRepos;
 window.getRepoDemoUrl = getRepoDemoUrl;
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Inicialização da grid de projetos e eventos
+  // Grid de projetos
   const projectsGrid = document.querySelector('.projects-ascii-grid');
   const fallbackProjectsHtml = projectsGrid ? projectsGrid.innerHTML : '';
   const filterBtns = document.querySelectorAll('.ascii-filter-btn');
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .replace(/'/g, '&#039;');
   }
 
-  // Identifica se o repositório é claramente um site (linguagem HTML/CSS, deploy no github.io ou tópicos de web)
+  // Verifica se o repo é web
   function isWebsiteRepo(repo) {
     if (!repo) return false;
     const lang = (repo.language || '').toLowerCase();
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return hasHtmlCss || hasWebDeploy || isKnownSite || hasWebTopic;
   }
 
-  // Identifica a categoria do repositório para suportar os filtros da interface (web, ui, scripts)
+  // Categoria do repo
   function getRepoCategory(repo) {
     const topics = (repo.topics || []).map(t => String(t).toLowerCase());
     const homepage = (repo.homepage || '').toLowerCase();
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const name = (repo.name || '').toLowerCase();
     const desc = (repo.description || '').toLowerCase();
 
-    // Link ou tópico explícito de Figma
+    // Figma
     const hasFigmaLink = homepage.includes('figma.com') ||
       demoUrl.includes('figma.com') ||
       figmaUrl.includes('figma.com') ||
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const isWeb = isWebsiteRepo(repo);
 
-    // Se tiver apenas C#, apenas Python, Shell, ou apenas JS sem ser site -> script/automação
+    // Script / automação
     const isScript = lang === 'python' ||
       lang === 'shell' ||
       lang === 'bash' ||
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return cats.join(' ') || (isScript ? 'scripts' : 'web');
   }
 
-  // Mapeamento específico de tecnologias reais por repositório
+  // Tags por repositório
   const repoTechTags = {
     'Portfolio': ['[HTML5]', '[CSS3]', '[JAVASCRIPT]', '[CANVAS]'],
     'Portifolio': ['[HTML5]', '[CSS3]', '[JAVASCRIPT]', '[CANVAS]'],
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'SaborDoBrasil': ['[HTML5]', '[CSS3]', '[RESPONSIVE]', '[SEMANTIC_WEB]']
   };
 
-  // Gera tags técnicas reais ([TAG]) substituindo tags genéricas
+  // Tags técnicas
   function getRepoTags(repo) {
     if (repo && repo.name && repoTechTags[repo.name]) {
       return repoTechTags[repo.name];
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return tags.slice(0, 4);
   }
 
-  // Gera a janela ASCII padronizada com o ícone da desenvolvedora e status
+  // Preview ASCII do card
   function generateAsciiPreview(repo, typeTag) {
     const pad = (s, l) => (s + ' '.repeat(l)).slice(0, l);
     const safeName = (repo.name || 'PROJECT').toUpperCase().slice(0, 22);
@@ -261,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Mapeamento de screenshots e prints reais diretamente dos repositórios
+  // Screenshots dos repositórios
   const repoRealPreviews = {
     'Portfolio': 'preview_portfolio.png',
     'Portifolio': 'preview_portfolio.png',
@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'aprenda-mais-enem': 'https://raw.githubusercontent.com/VaporubDev/aprenda-mais-enem/main/preview.png'
   };
 
-  // Terminais interativos sob medida para cada script ou ferramenta CLI
+  // CLI interativo dos scripts
   const customScriptTerminals = {
     'automacao-linkedin': `> python main.py\n[CONFIG] Carregando credenciais da API do LinkedIn... [OK]\n[GITHUB] Verificando novos commits em VaporubDev...\n[GEMINI] Gerando rascunho de postagem com IA...\n[MAIL] Enviando Magic Link de aprovação por e-mail...\n[STATUS] Aguardando aprovação para publicação!`,
     'automacao-renomear-pdfs': `> python renomear.py\n[SCAN] Varrendo pasta de comprovantes...\n[EXTRACT] Lendo PDFs com pypdf e Regex...\n[REGEX] Favorecido identificado: "MARIA SILVA SANTOS"\n[RENAME] -> 2026_02_MARIA_SILVA.pdf [OK]\n[STATUS] 142 arquivos renomeados com sucesso!`
@@ -462,7 +462,7 @@ ${asciiPreview}
             webDemoUrl = match[0].trim().replace('vaporubberg.github.io', 'vaporubdev.github.io');
           }
 
-          // Extração automática de print/GIF real do projeto diretamente do README do repositório
+          // Print do README
           const imgHtmlMatch = text.match(/<img[^>]+src=["']([^"']+)["']/i);
           const imgMdMatch = text.match(/!\[.*?\]\(([^)\s]+)\)/i);
           const rawImg = (imgHtmlMatch ? imgHtmlMatch[1] : (imgMdMatch ? imgMdMatch[1] : '')).trim();
@@ -638,7 +638,7 @@ ${asciiPreview}
 
   fetchGithubProjects();
 
-  // Controle do preview flutuante (popover) ao passar o mouse
+  // Preview popover
   const popover = document.getElementById('project-preview-popover');
   const popoverTitle = document.getElementById('popover-title');
   const popoverImg = document.getElementById('popover-img');
@@ -660,7 +660,7 @@ ${asciiPreview}
 
     if (popoverTitle) popoverTitle.textContent = `+--[ PREVIEW: ${repoName.toUpperCase().slice(0, 18)} ]`;
 
-    // Função interna para renderizar o estado de loading / aguardando informações adicionais para sites
+    // Estado de loading
     function renderSiteLoadingState() {
       if (popoverImg) popoverImg.style.display = 'none';
       if (popoverSpinner) popoverSpinner.style.display = 'none';
@@ -673,7 +673,7 @@ ${asciiPreview}
       }
     }
 
-    // Se é claramente um site (tem HTML/CSS, deploy ou interface web)
+    // Se for site
     if (isSite) {
       if (previewImgUrl) {
         if (popoverCli) popoverCli.style.display = 'none';
@@ -693,16 +693,16 @@ ${asciiPreview}
             popoverImg.classList.add('loaded');
           };
           popoverImg.onerror = () => {
-            // Se a imagem falhar ao carregar, exibe o estado de loading aguardando dados
+            // Fallback de imagem
             renderSiteLoadingState();
           };
         }
       } else {
-        // Site sem imagem ou sem link do github.io: exibe loading aguardando informações adicionais
+        // Site sem imagem
         renderSiteLoadingState();
       }
     } else {
-      // Repositório de automação e script (C#, JS puro, Python, Shell)
+      // Scripts & automação
       if (popoverImg) popoverImg.style.display = 'none';
       if (popoverSpinner) popoverSpinner.style.display = 'none';
       if (popoverBadge) popoverBadge.textContent = '[ SCRIPT ]';
@@ -751,7 +751,7 @@ ${asciiPreview}
       top = rect.bottom + 12;
     }
 
-    // Se no mobile ultrapassar a parte inferior da janela visível, posiciona no centro da viewport
+    // Ajuste viewport mobile
     if (top + popoverHeight > window.innerHeight - 16) {
       top = Math.max(16, (window.innerHeight - popoverHeight) / 2);
     }
@@ -761,7 +761,7 @@ ${asciiPreview}
   }
 
   if (projectsGrid) {
-    // Desktop: hover com mouse
+    // Desktop: hover
     projectsGrid.addEventListener('mouseover', (e) => {
       const trigger = e.target.closest('.proj-name, [data-i18n-role="demo"], [data-i18n$="_demo"], [data-i18n$="_figma"], [data-i18n$="_app"]');
       if (trigger) {
@@ -776,7 +776,7 @@ ${asciiPreview}
       }
     });
 
-    // Mobile: toque longo (segurar por 350ms no card ou no nome do projeto)
+    // Mobile: long-press
     let touchTimer = null;
     let touchTarget = null;
     let isLongPress = false;
@@ -818,7 +818,7 @@ ${asciiPreview}
       hideProjectPreview();
     });
 
-    // Fecha o preview ao tocar em qualquer outro lugar fora dele no mobile
+    // Fechar ao tocar fora
     document.addEventListener('touchstart', (e) => {
       if (popover && popover.classList.contains('visible')) {
         if (!popover.contains(e.target) && !e.target.closest('.project-ascii-card')) {
