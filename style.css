@@ -1926,7 +1926,7 @@ body.ascii-body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 440px;
+    max-width: 100%;
     margin: 0 auto 30px auto;
     gap: 10px;
   }
@@ -1937,13 +1937,17 @@ body.ascii-body {
   }
   .ascii-stats-table {
     width: 100%;
-    max-width: 440px;
+    max-width: 100%;
     margin: 0 auto;
     justify-content: space-around;
   }
+  .hero-right {
+    width: 100%;
+    max-width: 100%;
+  }
   .hero-interactive-terminal {
     width: 100%;
-    max-width: 580px;
+    max-width: 100%;
     margin: 0 auto;
   }
 
