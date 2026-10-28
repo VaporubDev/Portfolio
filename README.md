@@ -4,9 +4,9 @@
 
 🔗 **[Acesse o Portfólio Online](https://vaporubdev.github.io/Portfolio/)**
 
-<video src="preview_portfolio.mp4" controls="controls" width="100%" muted="muted" loop="loop">
-  Seu navegador não suporta reprodução de vídeo. <a href="preview_portfolio.mp4">Baixar vídeo</a>
-</video>
+<p align="center">
+  <img alt="Preview do Portfólio" src="preview_portfolio.gif" width="100%">
+</p>
 
 ---
 
