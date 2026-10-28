@@ -170,9 +170,13 @@ const translations = {
     ,
       cat_devops_lead: "> [ INFRA & AUTOMAÇÃO ]"
     ,
-      cat_ui_title: "+--[ UI/UX DESIGN & PROTOTIPAGEM ]------------------------------------------------------------------------------------------------------------+"
+      cat_ui_title: "+--[ UI/UX DESIGN & PROTOTIPAGEM ]-----------------------------+"
     ,
       cat_ui_lead: "> [ DESIGN & PROTÓTIPO ]"
+    ,
+      cat_ai_title: "+--[ INTELIGÊNCIA ARTIFICIAL & LLMS ]--------------------------+"
+    ,
+      cat_ai_lead: "> [ IA & ENGENHARIA DE PROMPTS ]"
     ,
       traj_btn_cv: "[ ⇩ BAIXAR CURRÍCULO COMPLETO (PDF) ]"
     ,
@@ -188,7 +192,11 @@ const translations = {
       chip_auto_layout: "[ AUTO LAYOUT ]",
       chip_variants_comp: "[ VARIANTES & COMPONENTES ]",
       chip_wireframes: "[ WIREFRAMES & FLUXOS ]",
-      chip_svg_art: "[ SVG ART & ASCII ]"
+      chip_svg_art: "[ SVG ART & ASCII ]",
+      chip_gen_ai: "[ IA GENERATIVA ]",
+      chip_prompt_eng: "[ ENGENHARIA DE PROMPTS ]",
+      chip_ai_agents: "[ AGENTES AUTÔNOMOS ]",
+      chip_ai_workflow: "[ FLUXOS & AUTOMAÇÃO COM IA ]"
     },
     en: {
       lang_btn: '[ EN ]',
@@ -361,9 +369,13 @@ const translations = {
     ,
       cat_devops_lead: "> [ INFRA & AUTOMATION ]"
     ,
-      cat_ui_title: "+--[ UI/UX DESIGN & PROTOTYPING ]------------------------------------------------------------------------------------------------------------+"
+      cat_ui_title: "+--[ UI/UX DESIGN & PROTOTYPING ]------------------------------+"
     ,
       cat_ui_lead: "> [ DESIGN & PROTOTYPE ]"
+    ,
+      cat_ai_title: "+--[ ARTIFICIAL INTELLIGENCE & LLMS ]-------------------------+"
+    ,
+      cat_ai_lead: "> [ AI & PROMPT ENGINEERING ]"
     ,
       traj_btn_cv: "[ ⇩ DOWNLOAD FULL RESUME (PDF) ]"
     ,
@@ -379,7 +391,11 @@ const translations = {
       chip_auto_layout: "[ AUTO LAYOUT ]",
       chip_variants_comp: "[ VARIANTS & COMPONENTS ]",
       chip_wireframes: "[ WIREFRAMES & FLOWS ]",
-      chip_svg_art: "[ SVG ART & ASCII ]"
+      chip_svg_art: "[ SVG ART & ASCII ]",
+      chip_gen_ai: "[ GENERATIVE AI ]",
+      chip_prompt_eng: "[ PROMPT ENGINEERING ]",
+      chip_ai_agents: "[ AUTONOMOUS AGENTS ]",
+      chip_ai_workflow: "[ AI WORKFLOWS & AUTOMATION ]"
     },
     es: {
       lang_btn: '[ ES ]',
@@ -552,9 +568,13 @@ const translations = {
     ,
       cat_devops_lead: "> [ INFRA Y AUTOMATIZACIÓN ]"
     ,
-      cat_ui_title: "+--[ DISEÑO UI/UX Y PROTOTIPADO ]------------------------------------------------------------------------------------------------------------+"
+      cat_ui_title: "+--[ DISEÑO UI/UX Y PROTOTIPADO ]------------------------------+"
     ,
       cat_ui_lead: "> [ DISEÑO Y PROTOTIPOS ]"
+    ,
+      cat_ai_title: "+--[ INTELIGENCIA ARTIFICIAL Y LLMS ]-------------------------+"
+    ,
+      cat_ai_lead: "> [ IA E INGENIERÍA DE PROMPTS ]"
     ,
       traj_btn_cv: "[ ⇩ DESCARGAR CURRÍCULUM COMPLETO (PDF) ]"
     ,
@@ -570,7 +590,11 @@ const translations = {
       chip_auto_layout: "[ AUTO LAYOUT ]",
       chip_variants_comp: "[ VARIANTES Y COMPONENTES ]",
       chip_wireframes: "[ WIREFRAMES Y FLUJOS ]",
-      chip_svg_art: "[ ARTE SVG Y ASCII ]"
+      chip_svg_art: "[ ARTE SVG Y ASCII ]",
+      chip_gen_ai: "[ IA GENERATIVA ]",
+      chip_prompt_eng: "[ INGENIERÍA DE PROMPTS ]",
+      chip_ai_agents: "[ AGENTES AUTÓNOMOS ]",
+      chip_ai_workflow: "[ FLUJOS Y AUTOMATIZACIÓN CON IA ]"
     },
     fr: {
       lang_btn: '[ FR ]',
@@ -744,9 +768,13 @@ const translations = {
     ,
       cat_devops_lead: "> [ INFRA & AUTOMATISATION ]"
     ,
-      cat_ui_title: "+--[ UI/UX DESIGN & PROTOTYPAGE ]------------------------------------------------------------------------------------------------------------+"
+      cat_ui_title: "+--[ UI/UX DESIGN & PROTOTYPAGE ]------------------------------+"
     ,
       cat_ui_lead: "> [ DESIGN & PROTOTYPE ]"
+    ,
+      cat_ai_title: "+--[ INTELLIGENCE ARTIFICIELLE & LLMS ]-----------------------+"
+    ,
+      cat_ai_lead: "> [ IA & INGÉNIERIE DE PROMPTS ]"
     ,
       traj_btn_cv: "[ ⇩ TÉLÉCHARGER LE CV COMPLET (PDF) ]"
     ,
@@ -762,7 +790,11 @@ const translations = {
       chip_auto_layout: "[ AUTO LAYOUT ]",
       chip_variants_comp: "[ VARIANTES & COMPOSANTS ]",
       chip_wireframes: "[ WIREFRAMES & FLUX ]",
-      chip_svg_art: "[ ART SVG & ASCII ]"
+      chip_svg_art: "[ ART SVG & ASCII ]",
+      chip_gen_ai: "[ IA GÉNÉRATIVE ]",
+      chip_prompt_eng: "[ INGÉNIERIE DE PROMPTS ]",
+      chip_ai_agents: "[ AGENTS AUTONOMES ]",
+      chip_ai_workflow: "[ WORKFLOWS & AUTOMATISATION IA ]"
     };
 
   let currentLang = localStorage.getItem('portfolio_lang') || 'pt';

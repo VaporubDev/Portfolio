@@ -102,6 +102,7 @@ I7|   Workstation, screen & clean code.`,
   > BACKEND & APIS    : Python, Java, C#, Node.js, Spring Boot, Django, RESTful APIs
   > BANCOS DE DADOS   : PostgreSQL, MySQL, SQL ANSI, Modelagem Relacional
   > DEVOPS & INFRA    : Git, GitHub, Docker, Linux (Ubuntu/Debian), Bash / Shell
+  > INTELIGÊNCIA ART. : Generative AI, Prompt Engineering, LLMs (GPT/Claude), OpenAI API
   > UI/UX DESIGN      : Figma, Design Systems, Auto Layout, Wireframing, SVG`,
 
       projects: () => {
