@@ -164,7 +164,7 @@
         getX: (w) => (w > 1350 ? w - 240 : (w > 900 ? w - 150 : (w > 600 ? w * 0.68 : w * 0.5))),
         worldY: isMobile ? 320 : 420,
         parallax: 0.40,
-        fontSize: isMobile ? 13 : 18,
+        fontSize: isMobile ? 12 : 18,
         floatSpeed: 0.0018,
         floatAmp: 14,
         rotFactor: 0.0006,
@@ -174,10 +174,10 @@
       {
         id: 'space-invader-crab-1',
         type: 'invader-crab',
-        getX: (w) => (w > 1350 ? 120 : (w > 800 ? w * 0.10 : w * 0.16)),
+        getX: (w) => (w > 1350 ? 140 : (w > 800 ? w * 0.12 : 70)),
         worldY: isMobile ? 1000 : 1200,
         parallax: 0.52,
-        fontSize: isMobile ? 12 : 16,
+        fontSize: isMobile ? 11 : 16,
         floatSpeed: 0.0022,
         floatAmp: 16,
         rotFactor: 0.0012,
@@ -187,10 +187,10 @@
       {
         id: 'space-invader-squid-1',
         type: 'invader-squid',
-        getX: (w) => (w > 1350 ? w - 130 : (w > 800 ? w * 0.90 : w * 0.84)),
+        getX: (w) => (w > 1350 ? w - 140 : (w > 800 ? w * 0.88 : w - 70)),
         worldY: isMobile ? 1350 : 1600,
         parallax: 0.50,
-        fontSize: isMobile ? 12 : 15,
+        fontSize: isMobile ? 11 : 15,
         floatSpeed: 0.002,
         floatAmp: 15,
         rotFactor: 0.001,
@@ -200,10 +200,10 @@
       {
         id: 'retro-floppy',
         type: 'floppy',
-        getX: (w) => (w > 1350 ? 120 : (w > 800 ? w * 0.08 : w * 0.15)),
+        getX: (w) => (w > 1350 ? 140 : (w > 800 ? w * 0.10 : 70)),
         worldY: isMobile ? 1500 : 1850,
         parallax: 0.50,
-        fontSize: isMobile ? 13 : 18,
+        fontSize: isMobile ? 11 : 18,
         floatSpeed: 0.002,
         floatAmp: 15,
         rotFactor: 0.001,
@@ -213,10 +213,10 @@
       {
         id: 'space-invader-crab-2',
         type: 'invader-crab',
-        getX: (w) => (w > 1350 ? w - 130 : (w > 800 ? w * 0.89 : w * 0.84)),
+        getX: (w) => (w > 1350 ? w - 140 : (w > 800 ? w * 0.88 : w - 70)),
         worldY: isMobile ? 2200 : 2700,
         parallax: 0.50,
-        fontSize: isMobile ? 12 : 16,
+        fontSize: isMobile ? 11 : 16,
         floatSpeed: 0.0024,
         floatAmp: 14,
         rotFactor: 0.0012,
@@ -278,10 +278,9 @@
     const tilt = Math.max(-0.08, Math.min(0.08, smoothVelocity * cat.rotFactor));
     ctx.rotate(tilt);
 
-    const stretch = 1 + Math.max(-0.06, Math.min(0.08, Math.abs(smoothVelocity) * 0.001));
-    ctx.scale(1 / Math.sqrt(stretch), stretch);
-
     ctx.font = `bold ${cat.fontSize}px 'JetBrains Mono', 'Segoe UI Symbol', monospace`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
     ctx.fillStyle = colors.cat;
     ctx.shadowColor = colors.catGlow;
     ctx.shadowBlur = 12;
@@ -291,7 +290,7 @@
     const startY = -(currentSprite.length * lineHeight) / 2;
 
     for (let i = 0; i < currentSprite.length; i++) {
-      ctx.fillText(currentSprite[i], -130, startY + i * lineHeight);
+      ctx.fillText(currentSprite[i], 0, startY + i * lineHeight);
     }
 
     ctx.restore();
@@ -301,13 +300,15 @@
     ctx.save();
     ctx.translate(screenX + mouseX * 0.7, screenY + mouseY * 0.7);
 
-    const tilt = Math.max(-0.16, Math.min(0.16, smoothVelocity * invader.rotFactor));
+    const tilt = Math.max(-0.14, Math.min(0.14, smoothVelocity * invader.rotFactor));
     ctx.rotate(tilt);
 
     const stepCycle = Math.floor((accumulatedScrollDistance * 0.04 + invader.phase * 2) % 2);
     const sprite = stepCycle === 0 ? SPACE_INVADER_CRAB_F1 : SPACE_INVADER_CRAB_F2;
 
     ctx.font = `bold ${invader.fontSize}px 'JetBrains Mono', monospace`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
     ctx.fillStyle = colors.crab;
     ctx.shadowColor = colors.crabGlow;
     ctx.shadowBlur = 12;
@@ -316,7 +317,7 @@
     const startY = -(sprite.length * lineHeight) / 2;
 
     for (let i = 0; i < sprite.length; i++) {
-      ctx.fillText(sprite[i], -70, startY + i * lineHeight);
+      ctx.fillText(sprite[i], 0, startY + i * lineHeight);
     }
 
     ctx.restore();
@@ -333,6 +334,8 @@
     const sprite = stepCycle === 0 ? SPACE_INVADER_SQUID_F1 : SPACE_INVADER_SQUID_F2;
 
     ctx.font = `bold ${invader.fontSize}px 'JetBrains Mono', monospace`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
     ctx.fillStyle = colors.squid;
     ctx.shadowColor = colors.squidGlow;
     ctx.shadowBlur = 10;
@@ -341,7 +344,7 @@
     const startY = -(sprite.length * lineHeight) / 2;
 
     for (let i = 0; i < sprite.length; i++) {
-      ctx.fillText(sprite[i], -55, startY + i * lineHeight);
+      ctx.fillText(sprite[i], 0, startY + i * lineHeight);
     }
 
     ctx.restore();
@@ -355,6 +358,8 @@
     ctx.rotate(tilt);
 
     ctx.font = `bold ${floppy.fontSize}px 'JetBrains Mono', monospace`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
     ctx.fillStyle = colors.floppy;
     ctx.shadowColor = colors.floppyGlow || colors.catGlow;
     ctx.shadowBlur = 10;
@@ -363,7 +368,7 @@
     const startY = -(ASCII_FLOPPY.length * lineHeight) / 2;
 
     for (let i = 0; i < ASCII_FLOPPY.length; i++) {
-      ctx.fillText(ASCII_FLOPPY[i], -80, startY + i * lineHeight);
+      ctx.fillText(ASCII_FLOPPY[i], 0, startY + i * lineHeight);
     }
 
     ctx.restore();
