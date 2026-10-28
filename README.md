@@ -1,10 +1,12 @@
-﻿# 🖥️ Érica Paixão // Portfólio ASCII & Terminal Interativo
+# 🖥️ Érica Paixão // Portfólio ASCII & Terminal Interativo
 
 > Portfólio temático retrô minimalista construído puramente com caracteres monoespaçados (ASCII), Vanilla JavaScript, animações em Canvas 2D e integração dinâmica com a API do GitHub.
 
 🔗 **[Acesse o Portfólio Online](https://vaporubdev.github.io/Portfolio/)**
 
-![Preview do Portfólio](preview_portfolio.png)
+<video src="preview_portfolio.mp4" controls="controls" width="100%" muted="muted" loop="loop">
+  Seu navegador não suporta reprodução de vídeo. <a href="preview_portfolio.mp4">Baixar vídeo</a>
+</video>
 
 ---
 
