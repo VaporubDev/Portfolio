@@ -161,7 +161,7 @@
       {
         id: 'terminal-cat',
         type: 'cat',
-        getX: (w) => (w > 1350 ? w - 240 : (w > 800 ? w * 0.76 : w * 0.5)),
+        getX: (w) => (w > 1350 ? w - 240 : (w > 900 ? w - 150 : (w > 600 ? w * 0.68 : w * 0.5))),
         worldY: isMobile ? 320 : 420,
         parallax: 0.40,
         fontSize: isMobile ? 13 : 18,
