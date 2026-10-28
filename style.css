@@ -133,6 +133,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 15px;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body.ascii-body {
@@ -143,6 +145,8 @@ body.ascii-body {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
   letter-spacing: 0;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
@@ -193,6 +197,7 @@ body.ascii-body {
   max-width: 1160px;
   margin: 0 auto;
   padding: 0 24px;
+  box-sizing: border-box;
 }
 
 .c-purple,
@@ -1558,7 +1563,7 @@ body.ascii-body {
   gap: 8px;
   cursor: text;
   width: 100%;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .term-input {
@@ -1570,7 +1575,7 @@ body.ascii-body {
   font-size: 0.9rem;
   font-weight: 600;
   flex: 1;
-  min-width: 80px;
+  min-width: 120px;
   caret-color: var(--ascii-orange);
   cursor: text;
   padding: 0;
@@ -2115,32 +2120,37 @@ body.ascii-body {
   }
 
   /* Terminal Interativo */
+  .hero-interactive-terminal {
+    width: 100%;
+    max-width: 100%;
+  }
   .terminal-screen {
-    padding: 14px 12px;
-    font-size: 0.82rem;
-    min-height: 220px;
-    max-height: 360px;
+    padding: 12px 10px;
+    font-size: 0.78rem;
+    min-height: 200px;
+    max-height: 320px;
   }
   .term-welcome {
-    font-size: 0.78rem;
-    margin-bottom: 12px;
+    font-size: 0.74rem;
+    margin-bottom: 10px;
   }
   .terminal-input-row {
-    flex-wrap: nowrap;
-    gap: 6px;
+    flex-wrap: wrap;
+    gap: 4px;
+    row-gap: 6px;
   }
   .cli-prompt {
-    font-size: 0.78rem;
+    font-size: 0.74rem;
     white-space: nowrap;
     flex-shrink: 0;
   }
   .term-input {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     flex: 1;
-    min-width: 60px;
+    min-width: 100px;
   }
   .term-output {
-    font-size: 0.78rem;
+    font-size: 0.74rem;
   }
 
   /* Formulário de Contato */
@@ -2226,9 +2236,21 @@ body.ascii-body {
   .stat-desc {
     font-size: clamp(0.58rem, 2vw, 0.65rem);
   }
+  .hero-interactive-terminal {
+    width: 100%;
+    max-width: 100%;
+  }
   .hero-interactive-terminal .terminal-screen {
-    min-height: 220px;
-    max-height: 300px;
+    min-height: 190px;
+    max-height: 280px;
+    padding: 10px 8px;
+  }
+  .cli-prompt {
+    font-size: 0.70rem;
+  }
+  .term-input {
+    font-size: 0.74rem;
+    min-width: 90px;
   }
   .cat-tags {
     grid-template-columns: repeat(2, 1fr);
@@ -2320,6 +2342,18 @@ body.ascii-body {
     padding: 6px 8px;
     font-size: 0.70rem;
     width: 100%;
+  }
+  .terminal-input-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  .cli-prompt {
+    font-size: 0.68rem;
+  }
+  .term-input {
+    width: 100%;
+    font-size: 0.72rem;
   }
 }
 
