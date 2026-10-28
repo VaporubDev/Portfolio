@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR" data-theme="dark">
 <head>
   <meta charset="UTF-8">
@@ -37,8 +37,7 @@
         <a href="#trajetoria" class="ascii-nav-item"><span data-i18n="nav_trajectory">[02] Trajetória</span></a>
         <a href="#habilidades" class="ascii-nav-item"><span data-i18n="nav_skills">[03] Skills</span></a>
         <a href="#projetos" class="ascii-nav-item"><span data-i18n="nav_projects">[04] Projetos</span></a>
-        <a href="#terminal" class="ascii-nav-item"><span data-i18n="nav_terminal">[05] Terminal</span></a>
-        <a href="#contato" class="ascii-nav-item"><span data-i18n="nav_contact">[06] Contato</span></a>
+        <a href="#contato" class="ascii-nav-item"><span data-i18n="nav_contact">[05] Contato</span></a>
       </nav>
 
       <div class="ascii-nav-actions">
@@ -76,8 +75,7 @@
         <a href="#trajetoria" class="ascii-mobile-item"><span data-i18n="nav_trajectory">[02] Trajetória</span></a>
         <a href="#habilidades" class="ascii-mobile-item"><span data-i18n="nav_skills">[03] Skills</span></a>
         <a href="#projetos" class="ascii-mobile-item"><span data-i18n="nav_projects">[04] Projetos</span></a>
-        <a href="#terminal" class="ascii-mobile-item"><span data-i18n="nav_terminal">[05] Terminal</span></a>
-        <a href="#contato" class="ascii-mobile-item"><span data-i18n="nav_contact">[06] Contato</span></a>
+        <a href="#contato" class="ascii-mobile-item"><span data-i18n="nav_contact">[05] Contato</span></a>
         <a href="curriculo-erica-paixao.pdf" download="Currículo - Érica Paixão.pdf" class="ascii-btn ascii-btn-highlight mobile-cta-btn" data-i18n="nav_cv_btn">[ ⇩ BAIXAR CURRÍCULO (PDF) ]</a>
         <div class="mobile-menu-bar-bottom">+--------------------------------------------+</div>
       </div>
@@ -137,22 +135,21 @@
         </div>
       </div>
 
-      <div class="hero-right">
-        <div class="terminal-card">
+      <div class="hero-right" id="terminal">
+        <!-- Card Decorativo Preservado:
+        <div class="terminal-card terminal-card-backup" style="display: none;">
           <div class="terminal-bar">
             <span class="t-btn t-close"></span>
             <span class="t-btn t-min"></span>
             <span class="t-btn t-max"></span>
             <span class="t-title">developer_workstation.sh</span>
           </div>
-
           <div class="terminal-body">
             <div class="hero-ascii-station">
               <pre class="ascii-hero-avatar"> <span class="c-purple">o</span>  
 <span class="c-purple">/\</span><span class="c-grey">_/</span>
 <span class="c-grey">I</span><span class="c-purple">7</span><span class="c-grey">|</span> </pre>
             </div>
-
             <div class="ascii-cli-text">
               <p><span class="cli-prompt">erica@portfolio:~$</span> cat info.json</p>
               <pre class="json-code">
@@ -163,6 +160,28 @@
 }
               </pre>
               <p class="live-prompt"><span class="cli-prompt">erica@portfolio:~$</span> <span class="typed-text">cat developer_manifest.json</span><span class="cursor">_</span></p>
+            </div>
+          </div>
+        </div>
+        -->
+
+        <!-- Terminal Interativo CLI Ativo -->
+        <div class="interactive-terminal-box hero-interactive-terminal">
+          <div class="terminal-bar">
+            <span class="t-btn t-close"></span>
+            <span class="t-btn t-min"></span>
+            <span class="t-btn t-max"></span>
+            <span class="t-title">bash -- erica@portfolio:~ (tty1)</span>
+          </div>
+          <div class="terminal-screen" id="terminal-screen">
+            <p class="term-welcome" id="term-welcome" data-i18n="term_welcome">
+Bem-vindo(a) ao Terminal Interativo ASCII!
+Digite 'help' para visualizar os comandos disponíveis.
+            </p>
+            <div id="terminal-history"></div>
+            <div class="terminal-input-row">
+              <span class="cli-prompt">visitor@ascii-portfolio:~$</span>
+              <input type="text" id="terminal-input" class="term-input" autocomplete="off" spellcheck="false" placeholder="help" autofocus>
             </div>
           </div>
         </div>
@@ -251,7 +270,7 @@
               <span class="traj-company">WEX</span>
               <span class="traj-date" data-i18n="traj_card1_date">[ Abr/2025 - Jun/2026 ]</span>
             </div>
-            <h4 class="traj-role" data-i18n="traj_card1_role">&gt; Jovem Aprendiz em Dév de Software</h4>
+            <h4 class="traj-role" data-i18n="traj_card1_role">&gt; Jovem Aprendiz em Desenv de Software</h4>
             <p class="traj-desc" data-i18n="traj_card1_desc">
               Desenvolvimento de software em soluções financeiras: atuação em Linux/Bash para automação de processos, resolução de fluxos de cartões com Python e prevenção de duplicidade em regras de negócio.
             </p>
@@ -614,46 +633,12 @@
     <span>+--------------------------------------------------------------------------------+</span>
   </div>
 
-  <!-- SEÇÃO 05: TERMINAL CLI INTERATIVO -->
-  <section class="section" id="terminal">
-    <div class="container">
-      <div class="section-title-box">
-        <span class="box-tag" data-i18n="term_tag">// 05_INTERACTIVE_CONSOLE</span>
-        <h2 class="box-heading" data-i18n="term_heading">TERMINAL CLI INTERATIVO</h2>
-        <span class="box-sub" data-i18n="term_sub">Experimente digitar comandos: 'help', 'about', 'skills', 'projects', 'contact', 'clear'.</span>
-      </div>
 
-      <div class="interactive-terminal-box">
-        <div class="terminal-bar">
-          <span class="t-btn t-close"></span>
-          <span class="t-btn t-min"></span>
-          <span class="t-btn t-max"></span>
-          <span class="t-title">bash -- erica@portfolio:~ (tty1)</span>
-        </div>
-        <div class="terminal-screen" id="terminal-screen">
-          <p class="term-welcome" id="term-welcome" data-i18n="term_welcome">
-Bem-vindo(a) ao Terminal Interativo ASCII!
-Digite 'help' para visualizar os comandos disponíveis.
-          </p>
-          <div id="terminal-history"></div>
-          <div class="terminal-input-row">
-            <span class="cli-prompt">visitor@ascii-portfolio:~$</span>
-            <input type="text" id="terminal-input" class="term-input" autocomplete="off" spellcheck="false">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="ascii-divider">
-    <span>+--------------------------------------------------------------------------------+</span>
-  </div>
-
-  <!-- SEÇÃO 06: CONTATO & TRANSMISSÃO DE MENSAGEM -->
+  <!-- SEÇÃO 05: CONTATO & TRANSMISSÃO DE MENSAGEM -->
   <section class="section" id="contato">
     <div class="container">
       <div class="section-title-box">
-        <span class="box-tag" data-i18n="contact_tag">// 06_SEND_MESSAGE</span>
+        <span class="box-tag" data-i18n="contact_tag">// 05_SEND_MESSAGE</span>
         <h2 class="box-heading" data-i18n="contact_heading">VAMOS CONVERSAR?</h2>
         <span class="box-sub" data-i18n="contact_sub">Disponível para freelas, novos projetos e oportunidades profissionais.</span>
       </div>
